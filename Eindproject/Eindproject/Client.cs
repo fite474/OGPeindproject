@@ -13,7 +13,6 @@ namespace Eindproject
     {
         static void Main(string[] args)
         {
-            
             //TcpClient client = new TcpClient("127.0.0.1", 1330);
 
             //int score = 0;
