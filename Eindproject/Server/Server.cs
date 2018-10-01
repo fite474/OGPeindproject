@@ -32,7 +32,7 @@ namespace Server
                 TcpClient client1 = listener.AcceptTcpClient();
                 TcpClient client2 = listener.AcceptTcpClient();
                 HandleClientThread task = new HandleClientThread(client1, client2);
-
+                
 
 
             }

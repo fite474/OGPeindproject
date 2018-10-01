@@ -36,30 +36,43 @@ namespace Eindproject
 
             
 
-            awnser = "";
+            awnser = "Rock";
+            Console.WriteLine(awnser);
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            awnser = "";
+            awnser = "Paper";
+            Console.WriteLine(awnser);
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            awnser = "";
+            awnser = "Scissors";
+            Console.WriteLine(awnser);
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            awnser = "";
+            awnser = "Spock";
+            Console.WriteLine(awnser);
+            this.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            awnser = "";
+            awnser = "Lizard";
+
+           Console.WriteLine(awnser);
+           this.Close();
+
         }
 
         public string GetAwnser() {
+            //this.Close();
             return awnser;
         }
 

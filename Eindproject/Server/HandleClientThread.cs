@@ -17,8 +17,9 @@ namespace Server
             while (true) {
                 Round round = new Round();
                 round.Player1Choice = ReadTextMessage(client1);
-                round.Player2Choice = ReadTextMessage(client2);
-                round.CheckWinner();
+                Console.WriteLine(round.Player1Choice);
+                //round.Player2Choice = ReadTextMessage(client2);
+                //round.CheckWinner();
                 if(round.RoundOver)
                 {
                     switch(round.Player1Won)
