@@ -32,7 +32,7 @@ namespace Eindproject
 
                 //score = ReadTextMessage(client);
                 //Console.WriteLine(score);
-
+                
 
             }
 
