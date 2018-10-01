@@ -10,10 +10,15 @@ namespace Server
 {
     class HandleClientThread
     {
+        enum Players : int
+        {
+            First = 1, Second = 2
+        };
         public HandleClientThread(object obj1, object obj2) {
             TcpClient client1 = obj1 as TcpClient;
             TcpClient client2 = obj2 as TcpClient;
             int x = 0;
+            Score scores = new Score();
             while (true) {
                 Round round = new Round();
                 round.Player1Choice = ReadTextMessage(client1);
@@ -25,16 +30,30 @@ namespace Server
                     switch(round.Player1Won)
                     {
                         case true:
+                            //Give player 1 a point
+                            scores.GivePoint((int)Players.First);
+                            // --> Update points in GUI
+                            break;
 
-
+                        case false:
+                            //Check if the result of the round was a draw
+                            if(round.Draw)
+                            {
+                                //Show the players that it was a draw
+                                break;
+                            }
+                            scores.GivePoint((int)Players.Second);
+                            // --> Update points in GUI
                             break;
                     }
+                    //Reset all the fields
+
+                    round.RoundOver = false;
                 }
-
-
             }
-
         }
+
+        
 
 
         public static void WriteTextMessage(TcpClient client, string message)
