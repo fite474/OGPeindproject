@@ -27,12 +27,13 @@ namespace Eindproject
                 //Console.Write(message);
                 //gameClient.setQuestion(message);
                 gameClient.ShowDialog();
-                Console.WriteLine("test");
+
 
                 string message = gameClient.GetAwnser();
-                Console.WriteLine(gameClient.GetAwnser());
-                WriteTextMessage(client, message);
 
+                WriteTextMessage(client, message);
+                message = ReadTextMessage(client);
+                Console.WriteLine("rechieved: " + message);
                 //score = ReadTextMessage(client);
                 //Console.WriteLine(score);
                 

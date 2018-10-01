@@ -16,11 +16,17 @@ namespace Server
             int x = 0;
             while (true) {
                 Round round = new Round();
+
+                //string message = ReadTextMessage(client1);
+                //Console.WriteLine(message);
                 round.Player1Choice = ReadTextMessage(client1);
-                Console.WriteLine(round.Player1Choice);
-                //round.Player2Choice = ReadTextMessage(client2);
+                WriteTextMessage(client2, round.Player1Choice);
+                //Console.WriteLine(round.Player1Choice);
+                round.Player2Choice = ReadTextMessage(client2);
+                WriteTextMessage(client1, round.Player2Choice);
+
                 //round.CheckWinner();
-                if(round.RoundOver)
+                if (round.RoundOver)
                 {
                     switch(round.Player1Won)
                     {
