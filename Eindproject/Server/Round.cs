@@ -8,15 +8,17 @@ namespace Server
 {
     class Round
     {
-        private string player1Choice;
-        private string player2Choice;
-        private bool roundOver;
-        private bool player1Won;
-        private bool draw;
+        public string Player1Choice { get; set; }
+        public string Player2Choice { get; set; }
+        public bool RoundOver { get; set; }
+        public bool Player1Won { get; set; }
+        public bool Draw { get; set; }
         
         public Round()
         {
-            
+            Player1Choice = "niets";
+            Player2Choice = "niets";
+            Draw = false;
         }
 
         /*
@@ -42,93 +44,93 @@ namespace Server
          */
         public void CheckWinner()
         {
-            if(player1Choice != "niets" && player2Choice != "niets")
+            if(Player1Choice != "niets" && Player2Choice != "niets")
             {
-                switch(player1Choice)
+                switch(Player1Choice)
                 {
                     case "Rock":
                         {
-                            if(player2Choice == "Rock")
+                            if(Player2Choice == "Rock")
                             {
-                                draw = true;
+                                Draw = true;
                             }
-                            if (player2Choice == "Spock")
-                                player1Won = false;
-                            if (player2Choice == "Paper")
-                                player1Won = false;
-                            if (player2Choice == "Scissors")
-                                player1Won = true;
-                            if (player2Choice == "Lizard")
-                                player1Won = true;
+                            if (Player2Choice == "Spock")
+                                Player1Won = false;
+                            if (Player2Choice == "Paper")
+                                Player1Won = false;
+                            if (Player2Choice == "Scissors")
+                                Player1Won = true;
+                            if (Player2Choice == "Lizard")
+                                Player1Won = true;
                             break;                                
                         }
                     case "Paper":
                         {
-                            if (player2Choice == "Paper")
+                            if (Player2Choice == "Paper")
                             {
-                                draw = true;
+                                Draw = true;
                             }
-                            if (player2Choice == "Spock")
-                                player1Won = true;
-                            if (player2Choice == "Rock")
-                                player1Won = true;
-                            if (player2Choice == "Scissors")
-                                player1Won = false;
-                            if (player2Choice == "Lizard")
-                                player1Won = false;
+                            if (Player2Choice == "Spock")
+                                Player1Won = true;
+                            if (Player2Choice == "Rock")
+                                Player1Won = true;
+                            if (Player2Choice == "Scissors")
+                                Player1Won = false;
+                            if (Player2Choice == "Lizard")
+                                Player1Won = false;
                             break;
                         }
 
                     case "Scissors":
                         {
-                            if (player2Choice == "Scissors")
+                            if (Player2Choice == "Scissors")
                             {
-                                draw = true;
+                                Draw = true;
                             }
-                            if (player2Choice == "Spock")
-                                player1Won = false;
-                            if (player2Choice == "Rock")
-                                player1Won = false;
-                            if (player2Choice == "Paper")
-                                player1Won = true;
-                            if (player2Choice == "Lizard")
-                                player1Won = true;
+                            if (Player2Choice == "Spock")
+                                Player1Won = false;
+                            if (Player2Choice == "Rock")
+                                Player1Won = false;
+                            if (Player2Choice == "Paper")
+                                Player1Won = true;
+                            if (Player2Choice == "Lizard")
+                                Player1Won = true;
                             break;
                         }
                     case "Spock":
                         {
-                            if (player2Choice == "Spock")
+                            if (Player2Choice == "Spock")
                             {
-                                draw = true;
+                                Draw = true;
                             }
-                            if (player2Choice == "Scissors")
-                                player1Won = true;
-                            if (player2Choice == "Rock")
-                                player1Won = true;
-                            if (player2Choice == "Paper")
-                                player1Won = false;
-                            if (player2Choice == "Lizard")
-                                player1Won = false;
+                            if (Player2Choice == "Scissors")
+                                Player1Won = true;
+                            if (Player2Choice == "Rock")
+                                Player1Won = true;
+                            if (Player2Choice == "Paper")
+                                Player1Won = false;
+                            if (Player2Choice == "Lizard")
+                                Player1Won = false;
                             break;
                         }
                     case "Lizard":
                         {
-                            if (player2Choice == "Lizard")
+                            if (Player2Choice == "Lizard")
                             {
-                                draw = true;
+                                Draw = true;
                             }
-                            if (player2Choice == "Spock")
-                                player1Won = true;
-                            if (player2Choice == "Rock")
-                                player1Won = false;
-                            if (player2Choice == "Paper")
-                                player1Won = true;
-                            if (player2Choice == "Scissors")
-                                player1Won = false;
+                            if (Player2Choice == "Spock")
+                                Player1Won = true;
+                            if (Player2Choice == "Rock")
+                                Player1Won = false;
+                            if (Player2Choice == "Paper")
+                                Player1Won = true;
+                            if (Player2Choice == "Scissors")
+                                Player1Won = false;
                             break;
                         }
                 }
-                roundOver = true;
+                RoundOver = true;
             }
         }
 

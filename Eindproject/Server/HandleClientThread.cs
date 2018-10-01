@@ -15,6 +15,20 @@ namespace Server
             TcpClient client2 = obj2 as TcpClient;
             int x = 0;
             while (true) {
+                Round round = new Round();
+                round.Player1Choice = ReadTextMessage(client1);
+                round.Player2Choice = ReadTextMessage(client2);
+                round.CheckWinner();
+                if(round.RoundOver)
+                {
+                    switch(round.Player1Won)
+                    {
+                        case true:
+
+
+                            break;
+                    }
+                }
 
 
             }

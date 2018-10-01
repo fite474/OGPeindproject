@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Eindproject
 {
@@ -12,12 +13,12 @@ namespace Eindproject
     {
         static void Main(string[] args)
         {
-            TcpClient client = new TcpClient("127.0.0.1", 1330);
+            //TcpClient client = new TcpClient("127.0.0.1", 1330);
 
             //int score = 0;
             string score = "0";
             GameClient gameClient = new GameClient();
-            //Application.Run(form1);
+            Application.Run(gameClient);
             while (true)
             {
                 //gameClient.setScore(int.Parse(score));

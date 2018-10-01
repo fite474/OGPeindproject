@@ -15,11 +15,12 @@ namespace Eindproject
         public GameClient()
         {
             InitializeComponent();
+            this.button1.BackgroundImage = Eindproject.Properties.Resource1.lizard;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.button1.BackgroundImage = Eindproject.Properties.Resource1.lizard;
+            
         }
     }
 }
