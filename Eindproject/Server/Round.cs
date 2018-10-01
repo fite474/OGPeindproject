@@ -136,11 +136,11 @@ namespace Server
 
         public void Reset()
         {
-            player1Choice = "niets";
-            player2Choice = "niets";
-            roundOver = false;
-            player1Won = false;
-            draw = false;
+            Player1Choice = "niets";
+            Player2Choice = "niets";
+            RoundOver = false;
+            Player1Won = false;
+            Draw = false;
         }
 
     }
