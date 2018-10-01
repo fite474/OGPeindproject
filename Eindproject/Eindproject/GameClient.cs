@@ -18,9 +18,9 @@ namespace Eindproject
         public GameClient()
         {
             InitializeComponent();
-<<<<<<< Updated upstream
-            this.button1.BackgroundImage = Eindproject.Properties.Resource1.lizard;
-=======
+
+            //this.button1.BackgroundImage = Eindproject.Properties.Resource1.lizard;
+
             this.rockbutton.BackgroundImage = Eindproject.Properties.Resource1.rock;
             this.paperbutton.BackgroundImage = Eindproject.Properties.Resource1.paper;
             this.scissorbutton.BackgroundImage = Eindproject.Properties.Resource1.scissors;
@@ -28,14 +28,14 @@ namespace Eindproject
             this.lizardbutton.BackgroundImage = Eindproject.Properties.Resource1.lizard;
             player1choice.Image = Eindproject.Properties.Resource1.lizard;
             player2choice.Image = Eindproject.Properties.Resource1.lizard;
->>>>>>> Stashed changes
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-<<<<<<< Updated upstream
+
             
-=======
+
             awnser = "";
         }
 
@@ -66,7 +66,7 @@ namespace Eindproject
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
->>>>>>> Stashed changes
+
         }
     }
 }
