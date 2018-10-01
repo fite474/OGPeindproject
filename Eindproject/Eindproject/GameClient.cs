@@ -19,7 +19,7 @@ namespace Eindproject
 
         private void button1_Click(object sender, EventArgs e)
         {
-           this.button1.BackgroundImage = 
+            this.button1.BackgroundImage = Eindproject.Properties.Resource1.lizard;
         }
     }
 }
