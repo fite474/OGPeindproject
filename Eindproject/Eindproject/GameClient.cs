@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
 
 namespace Eindproject
 {
     public partial class GameClient : Form
     {
+        
         public GameClient()
         {
             InitializeComponent();
