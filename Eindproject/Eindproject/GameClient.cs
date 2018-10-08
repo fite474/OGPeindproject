@@ -26,16 +26,13 @@ namespace Eindproject
             this.scissorbutton.BackgroundImage = Eindproject.Properties.Resource1.scissors;
             this.pockbutton.BackgroundImage = Eindproject.Properties.Resource1.spock;
             this.lizardbutton.BackgroundImage = Eindproject.Properties.Resource1.lizard;
-            player1choice.Image = Eindproject.Properties.Resource1.lizard;
-            player2choice.Image = Eindproject.Properties.Resource1.lizard;
+            //player1choice.Image = Eindproject.Properties.Resource1.lizard;
+            //player2choice.Image = Eindproject.Properties.Resource1.lizard;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            
-
             awnser = "Rock";
             Console.WriteLine(awnser);
             this.Close();
@@ -78,6 +75,76 @@ namespace Eindproject
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+
+        }
+
+        public void SetPlayerChoice(string Player1Choice, string Player2Choice)
+        {
+            switch (Player1Choice)
+            {
+                case "Rock":
+                    {
+                        player1choice.Image = Eindproject.Properties.Resource1.rock;
+                        break;
+                    }
+                case "Paper":
+                    {
+                        player1choice.Image = Eindproject.Properties.Resource1.paper;
+                        break;
+                    }
+                case "Siccors":
+                    {
+                        player1choice.Image = Eindproject.Properties.Resource1.scissors;
+                        break;
+                    }
+                case "Spock":
+                    {
+                        player1choice.Image = Eindproject.Properties.Resource1.spock;
+                        break;
+                    }
+                case "Lizard":
+                    {
+                        player1choice.Image = Eindproject.Properties.Resource1.lizard;
+                        break;
+                    }
+                case "":
+                    {
+                        
+                        break;
+                    }
+            }
+
+            switch (Player2Choice)
+            {
+                case "Rock":
+                    {
+                        player2choice.Image = Eindproject.Properties.Resource1.rock;
+                        break;
+                    }
+                case "Paper":
+                    {
+                        player2choice.Image = Eindproject.Properties.Resource1.paper;
+                        break;
+                    }
+                case "Siccors":
+                    {
+                        player2choice.Image = Eindproject.Properties.Resource1.scissors;
+                        break;
+                    }
+                case "Spock":
+                    {
+                        player2choice.Image = Eindproject.Properties.Resource1.spock;
+                        break;
+                    }
+                case "Lizard":
+                    {
+                        player2choice.Image = Eindproject.Properties.Resource1.lizard;
+                        break;
+                    }
+
+
+            }
 
 
         }

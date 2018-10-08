@@ -15,12 +15,15 @@ namespace Eindproject
         {
             TcpClient client = new TcpClient("10.254.187.28", 1330);
             
-            string score = "0";
+            string player1Choice = "";
+            string player2Choice = "";
+            string message = "";
             GameClient gameClient = new GameClient();
             
             while (true)
             {
-
+                Console.WriteLine("playerchoice" + player1Choice + player2Choice);
+                gameClient.SetPlayerChoice(player1Choice, player2Choice);
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);
@@ -28,14 +31,16 @@ namespace Eindproject
                 gameClient.ShowDialog();
 
 
-                string message = gameClient.GetAwnser();
+                message = gameClient.GetAwnser();
 
                 WriteTextMessage(client, message);
-                message = ReadTextMessage(client);
-                Console.WriteLine("recieved: " + message);
-                score = ReadTextMessage(client);
-                Console.WriteLine(score);
 
+
+                player1Choice = ReadTextMessage(client);
+                Console.WriteLine("mine: " + player1Choice);
+                player2Choice = ReadTextMessage(client);
+                Console.WriteLine("other" + player2Choice);
+                Console.WriteLine("end string" + player1Choice + player2Choice);
 
             }
 
