@@ -26,9 +26,10 @@ namespace Server
             client1 = clients.Item1;
             client2 = clients.Item2;
             Score scores = new Score();
+            Round round = new Round();
             while (true)
             {
-                Round round = new Round();
+                
 
                 Tuple<string, string> playerChoices = GetChoices();
                 round.Player1Choice = playerChoices.Item1;
@@ -65,6 +66,7 @@ namespace Server
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     round.RoundOver = false;
+                    round.Reset();
                 }
             }
 
