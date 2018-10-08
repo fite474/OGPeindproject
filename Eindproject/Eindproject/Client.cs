@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,13 +18,16 @@ namespace Eindproject
             
             string player1Choice = "";
             string player2Choice = "";
-            string message = "";
+            string player1Score = "";
+            string player2Score = "";
+            
             GameClient gameClient = new GameClient();
             
             while (true)
             {
                 Console.WriteLine("playerchoice" + player1Choice + player2Choice);
                 gameClient.SetPlayerChoice(player1Choice, player2Choice);
+                gameClient.SetPlayerScore(player1Score, player2Score);
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);
@@ -31,14 +35,19 @@ namespace Eindproject
                 gameClient.ShowDialog();
 
 
-                message = gameClient.GetAwnser();
+                player1Choice = gameClient.GetAwnser();
 
-                WriteTextMessage(client, message);
+                
+                WriteTextMessage(client, player1Choice);
 
+                string serverResponse = ReadTextMessage(client);
+                string[] responses = Regex.Split(serverResponse, "--");
+                player1Score = responses[0];
+                player2Score = responses[1];
+                player2Choice = responses[2];
 
-                player1Choice = ReadTextMessage(client);
                 Console.WriteLine("mine: " + player1Choice);
-                player2Choice = ReadTextMessage(client);
+                //player2Choice = ReadTextMessage(client);
                 Console.WriteLine("other" + player2Choice);
                 Console.WriteLine("end string" + player1Choice + player2Choice);
 

@@ -79,6 +79,13 @@ namespace Eindproject
 
         }
 
+        public void SetPlayerScore(string score1, string score2)
+        {
+            scoreplayer1.Text = score1;
+            scoreplayer2.Text = score2;
+        }
+
+
         public void SetPlayerChoice(string Player1Choice, string Player2Choice)
         {
             switch (Player1Choice)
