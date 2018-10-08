@@ -42,6 +42,7 @@ namespace Server
             {
                 gamesToPlay = Int32.Parse(gamesAmount);
             }
+            WriteTextMessage(client2, "starting");
                 
             
             while (gamesToPlay > 0) //aftellen van aantal games

@@ -31,6 +31,8 @@ namespace Eindproject
             {
                 WaitingForm waitingForm = new WaitingForm();
                 waitingForm.ShowDialog();
+                string starting = ReadTextMessage(client);
+                waitingForm.Close();
                 //start wachtscherm --> nog maken
             }
             string player1Choice = "";
