@@ -81,8 +81,8 @@ namespace Server
                     {
                         gamesToPlay--;
                     }
-                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay);
-                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay);
+                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, "");
+                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, "");
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     round.RoundOver = false;
@@ -96,15 +96,18 @@ namespace Server
             //Show players who won
             int finalScorePlayer1 = scores.Player1Score;
             int finalScorePlayer2 = scores.Player2Score;
+            string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "win");
+            string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "lose");
+
             if (finalScorePlayer1 < finalScorePlayer2)
             {
-                WriteTextMessage(client1, "lose");
-                WriteTextMessage(client2, "win");
+                WriteTextMessage(client1, losePlayer);
+                WriteTextMessage(client2, winPlayer);
             }
             else
             {
-                WriteTextMessage(client2, "lose");
-                WriteTextMessage(client1, "win");
+                WriteTextMessage(client2, losePlayer);
+                WriteTextMessage(client1, winPlayer);
             }
             
 
@@ -115,11 +118,11 @@ namespace Server
 
         }
 
-        private string BuildString(int yourScore, int enemyScore, string enemyChoice, int gamesToPlay)
+        private string BuildString(int yourScore, int enemyScore, string enemyChoice, int gamesToPlay, string winStatus)
         {
 
             //TODO: games left meesturen --> DONE
-            string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice + "--" + gamesToPlay.ToString();
+            string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice + "--" + gamesToPlay.ToString() + "--" + winStatus;
             return stringToSend;
         }
 
