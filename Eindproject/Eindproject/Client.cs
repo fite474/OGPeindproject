@@ -29,7 +29,7 @@ namespace Eindproject
             }
             else
             {
-                WaitingForm waitingForm = new WaitingForm();
+                WaitingForm waitingForm = new WaitingForm(client);
                 waitingForm.ShowDialog();
                 string starting = ReadTextMessage(client);
                 waitingForm.Close();
