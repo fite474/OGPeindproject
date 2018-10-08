@@ -18,7 +18,7 @@ namespace Server
             First = 1, Second = 2
         };
 
-        public delegate void ParameterizedThreadStart(Object obj);
+        
 
         public void HandleSeshion(Object obj)
         {
