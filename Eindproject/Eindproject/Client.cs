@@ -14,27 +14,27 @@ namespace Eindproject
     {
         static void Main(string[] args)
         {
-            TcpClient client = new TcpClient("10.254.187.28", 1330);
-            string playernumber = ReadTextMessage(client);
-            if(playernumber == "1")
-            {
-                Player1Screen player1Screen = new Player1Screen();
-                player1Screen.ShowDialog();
-                string gameMode = player1Screen.GameMode;
-                WriteTextMessage(client, gameMode);
-                //start keuzescherm --> nog maken
+            //TcpClient client = new TcpClient("10.254.187.28", 1330);
+            //string playernumber = ReadTextMessage(client);
+            //if(playernumber == "1")
+            //{
+            //    Player1Screen player1Screen = new Player1Screen();
+            //    player1Screen.ShowDialog();
+            //    string gameMode = player1Screen.GameMode;
+            //    WriteTextMessage(client, gameMode);
+            //    //start keuzescherm --> nog maken
 
-                //response naar de server:
-                // best of xxx games;
-            }
-            else
-            {
-                WaitingForm waitingForm = new WaitingForm(client);
-                //waitingForm.ShowDialog();
-                //string starting = ReadTextMessage(client);
-                //waitingForm.Close();
-                //start wachtscherm --> nog maken
-            }
+            //    //response naar de server:
+            //    // best of xxx games;
+            //}
+            //else
+            //{
+            //    WaitingForm waitingForm = new WaitingForm(client);
+            //    //waitingForm.ShowDialog();
+            //    //string starting = ReadTextMessage(client);
+            //    //waitingForm.Close();
+            //    //start wachtscherm --> nog maken
+            //}
             string player1Choice = "";
             string player2Choice = "";
             string player1Score = "0";
@@ -61,7 +61,7 @@ namespace Eindproject
                 player1Choice = gameClient.GetAwnser();
 
                 
-                WriteTextMessage(client, player1Choice);
+                //WriteTextMessage(client, player1Choice);
 
                 string serverResponse = ReadTextMessage(client);
                 string[] responses = Regex.Split(serverResponse, "--");
