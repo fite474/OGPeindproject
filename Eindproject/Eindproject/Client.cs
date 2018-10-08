@@ -72,13 +72,11 @@ namespace Eindproject
                 gameOver = responses[4];
                 if (gameOver.Equals("win"))
                 {
-                    endScreen.setWinStatus("WINNER!!");
-                    endScreen.ShowDialog();
+                    gameClient.SetWinLose("WINNER!!");
                 }
                 if (gameOver.Equals("lose"))
                 {
-                    endScreen.setWinStatus("LOSER!!");
-                    endScreen.ShowDialog();
+                    gameClient.SetWinLose("LOSER!!");
                 }
 
 
