@@ -13,6 +13,7 @@ namespace Eindproject
 {
     public partial class WaitingForm : Form
     {
+        TcpClient client;
         public WaitingForm()
         {
             InitializeComponent();
@@ -22,13 +23,18 @@ namespace Eindproject
         public WaitingForm(TcpClient client)
         {
             InitializeComponent();
-            string response = Client.ReadTextMessage(client);
-            this.Close();
+            this.client = client;
         }
+
 
         private void WaitingForm_Load(object sender, EventArgs e)
         {
 
+        }
+        private void WaitingForm_Show(object sender, EventArgs e)
+        {
+            Client.ReadTextMessage(client);
+            this.Dispose();
         }
 
         

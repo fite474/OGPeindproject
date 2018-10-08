@@ -1,4 +1,6 @@
-﻿namespace Eindproject
+﻿using System;
+
+namespace Eindproject
 {
     partial class WaitingForm
     {
@@ -56,10 +58,12 @@
             this.Text = "Waiting...";
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.WaitingForm_Load);
+            this.Shown += new System.EventHandler(this.WaitingForm_Show);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
 
         #endregion
 
