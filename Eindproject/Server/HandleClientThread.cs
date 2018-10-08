@@ -25,7 +25,6 @@ namespace Server
             Tuple<TcpClient, TcpClient> clients = obj as Tuple<TcpClient, TcpClient>;
             client1 = clients.Item1;
             client2 = clients.Item2;
-            int x = 0;
             Score scores = new Score();
             while (true)
             {
