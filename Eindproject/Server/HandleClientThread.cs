@@ -27,7 +27,12 @@ namespace Server
             client2 = clients.Item2;
             Score scores = new Score();
             Round round = new Round();
-            while (true)
+
+            WriteTextMessage(client1, "1");
+            WriteTextMessage(client2, "2");
+
+            //ontvang t aantal games
+            while (true) //aftellen van aantal games
             {
                 
 
@@ -77,6 +82,8 @@ namespace Server
 
         private string BuildString(int yourScore, int enemyScore, string enemyChoice)
         {
+
+            //TODO: games left meesturen
             string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice;
             return stringToSend;
         }

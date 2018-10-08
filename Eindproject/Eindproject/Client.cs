@@ -15,7 +15,18 @@ namespace Eindproject
         static void Main(string[] args)
         {
             TcpClient client = new TcpClient("10.254.187.28", 1330);
-            
+            string playernumber = ReadTextMessage(client);
+            if(playernumber == "1")
+            {
+                //start keuzescherm --> nog maken
+
+                //response naar de server:
+                // best of xxx games;
+            }
+            else
+            {
+                //start wachtscherm --> nog maken
+            }
             string player1Choice = "";
             string player2Choice = "";
             string player1Score = "0";
