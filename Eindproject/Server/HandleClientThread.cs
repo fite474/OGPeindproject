@@ -27,12 +27,24 @@ namespace Server
             client2 = clients.Item2;
             Score scores = new Score();
             Round round = new Round();
+            int gamesToPlay = 0;
+
 
             WriteTextMessage(client1, "1");
             WriteTextMessage(client2, "2");
 
-            //ontvang t aantal games
-            while (true) //aftellen van aantal games
+            string gamesAmount = ReadTextMessage(client1);
+            if(gamesAmount == "x")
+            {
+                gamesToPlay = 9999;
+            }
+            else
+            {
+                gamesToPlay = Int32.Parse(gamesAmount);
+            }
+                
+            
+            while (gamesToPlay > 0) //aftellen van aantal games
             {
                 
 
@@ -64,14 +76,25 @@ namespace Server
                             break;
                     }
                     //Reset all the fields
-                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2);
-                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1);
+                    if (gamesAmount != "x")
+                    {
+                        gamesToPlay--;
+                    }
+                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay);
+                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay);
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     round.RoundOver = false;
                     round.Reset();
+                    
+                    
                 }
+                
             }
+
+            //Show players who won
+            int finalScorePlayer1 = scores.Player1Score;
+            int finalScorePlayer2 = scores.Player2Score;
 
         }
 
@@ -80,11 +103,11 @@ namespace Server
 
         }
 
-        private string BuildString(int yourScore, int enemyScore, string enemyChoice)
+        private string BuildString(int yourScore, int enemyScore, string enemyChoice, int gamesToPlay)
         {
 
-            //TODO: games left meesturen
-            string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice;
+            //TODO: games left meesturen --> DONE
+            string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice + "--" + gamesToPlay.ToString();
             return stringToSend;
         }
 
