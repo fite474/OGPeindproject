@@ -73,12 +73,12 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.06569F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.93431F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(945, 563);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -87,12 +87,15 @@
             this.rockbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rockbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rockbutton.Location = new System.Drawing.Point(3, 93);
+            this.rockbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rockbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rockbutton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.rockbutton.Location = new System.Drawing.Point(3, 59);
             this.rockbutton.Name = "rockbutton";
-            this.rockbutton.Size = new System.Drawing.Size(105, 114);
+            this.rockbutton.Size = new System.Drawing.Size(105, 95);
             this.rockbutton.TabIndex = 0;
-            this.rockbutton.Text = "button1";
+            this.rockbutton.Text = "Rock";
+            this.rockbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.rockbutton.UseVisualStyleBackColor = true;
             this.rockbutton.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -101,12 +104,15 @@
             this.paperbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.paperbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.paperbutton.Location = new System.Drawing.Point(3, 213);
+            this.paperbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.paperbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.paperbutton.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.paperbutton.Location = new System.Drawing.Point(3, 160);
             this.paperbutton.Name = "paperbutton";
-            this.paperbutton.Size = new System.Drawing.Size(105, 90);
+            this.paperbutton.Size = new System.Drawing.Size(105, 95);
             this.paperbutton.TabIndex = 1;
-            this.paperbutton.Text = "button2";
+            this.paperbutton.Text = "Paper";
+            this.paperbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.paperbutton.UseVisualStyleBackColor = true;
             this.paperbutton.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -115,12 +121,14 @@
             this.scissorbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.scissorbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.scissorbutton.Location = new System.Drawing.Point(3, 309);
+            this.scissorbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.scissorbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.scissorbutton.Location = new System.Drawing.Point(3, 261);
             this.scissorbutton.Name = "scissorbutton";
-            this.scissorbutton.Size = new System.Drawing.Size(105, 79);
+            this.scissorbutton.Size = new System.Drawing.Size(105, 95);
             this.scissorbutton.TabIndex = 2;
-            this.scissorbutton.Text = "button3";
+            this.scissorbutton.Text = "Scissors";
+            this.scissorbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.scissorbutton.UseVisualStyleBackColor = true;
             this.scissorbutton.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -129,12 +137,14 @@
             this.pockbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pockbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pockbutton.Location = new System.Drawing.Point(3, 394);
+            this.pockbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pockbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.pockbutton.Location = new System.Drawing.Point(3, 362);
             this.pockbutton.Name = "pockbutton";
-            this.pockbutton.Size = new System.Drawing.Size(105, 84);
+            this.pockbutton.Size = new System.Drawing.Size(105, 95);
             this.pockbutton.TabIndex = 3;
-            this.pockbutton.Text = "button4";
+            this.pockbutton.Text = "Lizard";
+            this.pockbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.pockbutton.UseVisualStyleBackColor = true;
             this.pockbutton.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -143,12 +153,14 @@
             this.lizardbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lizardbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lizardbutton.Location = new System.Drawing.Point(3, 484);
+            this.lizardbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.lizardbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lizardbutton.Location = new System.Drawing.Point(3, 463);
             this.lizardbutton.Name = "lizardbutton";
-            this.lizardbutton.Size = new System.Drawing.Size(105, 76);
+            this.lizardbutton.Size = new System.Drawing.Size(105, 97);
             this.lizardbutton.TabIndex = 4;
-            this.lizardbutton.Text = "button5";
+            this.lizardbutton.Text = "Spock";
+            this.lizardbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lizardbutton.UseVisualStyleBackColor = true;
             this.lizardbutton.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -156,7 +168,7 @@
             // 
             this.scoreLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreLabel.AutoSize = true;
-            this.scoreLabel.Location = new System.Drawing.Point(515, 38);
+            this.scoreLabel.Location = new System.Drawing.Point(515, 21);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(142, 13);
             this.scoreLabel.TabIndex = 5;
@@ -167,7 +179,7 @@
             // 
             this.scoreplayer1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreplayer1.AutoSize = true;
-            this.scoreplayer1.Location = new System.Drawing.Point(663, 38);
+            this.scoreplayer1.Location = new System.Drawing.Point(663, 21);
             this.scoreplayer1.Name = "scoreplayer1";
             this.scoreplayer1.Size = new System.Drawing.Size(133, 13);
             this.scoreplayer1.TabIndex = 6;
@@ -177,7 +189,7 @@
             // 
             this.scoreplayer2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreplayer2.AutoSize = true;
-            this.scoreplayer2.Location = new System.Drawing.Point(802, 38);
+            this.scoreplayer2.Location = new System.Drawing.Point(802, 21);
             this.scoreplayer2.Name = "scoreplayer2";
             this.scoreplayer2.Size = new System.Drawing.Size(140, 13);
             this.scoreplayer2.TabIndex = 7;
@@ -186,7 +198,7 @@
             // player1choice
             // 
             this.player1choice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.player1choice.Location = new System.Drawing.Point(369, 309);
+            this.player1choice.Location = new System.Drawing.Point(369, 261);
             this.player1choice.Name = "player1choice";
             this.player1choice.Size = new System.Drawing.Size(140, 79);
             this.player1choice.TabIndex = 8;
@@ -196,7 +208,7 @@
             // player2choice
             // 
             this.player2choice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.player2choice.Location = new System.Drawing.Point(663, 309);
+            this.player2choice.Location = new System.Drawing.Point(663, 261);
             this.player2choice.Name = "player2choice";
             this.player2choice.Size = new System.Drawing.Size(133, 79);
             this.player2choice.TabIndex = 9;
@@ -205,7 +217,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(515, 394);
+            this.pictureBox3.Location = new System.Drawing.Point(515, 362);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(142, 84);
             this.pictureBox3.TabIndex = 10;
@@ -215,7 +227,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(515, 251);
+            this.label1.Location = new System.Drawing.Point(515, 201);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 11;
@@ -227,7 +239,7 @@
             this.RoundsLeftLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RoundsLeftLabel.AutoSize = true;
             this.RoundsLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.RoundsLeftLabel.Location = new System.Drawing.Point(114, 32);
+            this.RoundsLeftLabel.Location = new System.Drawing.Point(114, 15);
             this.RoundsLeftLabel.Name = "RoundsLeftLabel";
             this.RoundsLeftLabel.Size = new System.Drawing.Size(249, 25);
             this.RoundsLeftLabel.TabIndex = 12;
