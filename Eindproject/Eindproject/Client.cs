@@ -43,7 +43,6 @@ namespace Eindproject
             string gameOver = "";
             
             GameClient gameClient = new GameClient();
-            EndScreen endScreen = new EndScreen();
             gameClient.SetPlayerScore(player1Score, player2Score);
 
             while (true)
