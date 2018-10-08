@@ -96,6 +96,17 @@ namespace Server
             //Show players who won
             int finalScorePlayer1 = scores.Player1Score;
             int finalScorePlayer2 = scores.Player2Score;
+            if (finalScorePlayer1 < finalScorePlayer2)
+            {
+                WriteTextMessage(client1, "lose");
+                WriteTextMessage(client2, "win");
+            }
+            else
+            {
+                WriteTextMessage(client2, "lose");
+                WriteTextMessage(client1, "win");
+            }
+            
 
         }
 
