@@ -22,7 +22,7 @@ namespace Eindproject
         public WaitingForm(TcpClient client)
         {
             InitializeComponent();
-            Client.ReadTextMessage(client);
+            string response = Client.ReadTextMessage(client);
             this.Close();
         }
 
