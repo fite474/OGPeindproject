@@ -30,7 +30,7 @@ namespace Eindproject
             else
             {
                 WaitingForm waitingForm = new WaitingForm(client);
-                waitingForm.ShowDialog();
+                //waitingForm.ShowDialog();
                 //string starting = ReadTextMessage(client);
                 //waitingForm.Close();
                 //start wachtscherm --> nog maken
