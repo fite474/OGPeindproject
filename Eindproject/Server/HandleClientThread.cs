@@ -36,9 +36,9 @@ namespace Server
                 Tuple<string, string> tupleke = GetChoices();
 
                 WriteTextMessage(client1, "jouw keus: " + tupleke.Item1);
-                WriteTextMessage(client1, "Tegenstanders keus: " + tupleke.Item2);
-                WriteTextMessage(client2, "Tegenstanders keus: " + tupleke.Item1);
+                WriteTextMessage(client1, "Tegenstanders keus: " + tupleke.Item2);  
                 WriteTextMessage(client2, "jouw keus: " + tupleke.Item2);
+                WriteTextMessage(client2, "Tegenstanders keus: " + tupleke.Item1);
                 //round.CheckWinner();
                 if (round.RoundOver)
                 {
