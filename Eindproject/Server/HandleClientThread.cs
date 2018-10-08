@@ -44,8 +44,6 @@ namespace Server
                         case true:
                             //Give player 1 a point
                             scores.GivePoint((int)Players.First);
-                            
-                            
                             break;
 
                         case false:
