@@ -29,6 +29,8 @@ namespace Eindproject
             }
             else
             {
+                WaitingForm waitingForm = new WaitingForm();
+                waitingForm.ShowDialog();
                 //start wachtscherm --> nog maken
             }
             string player1Choice = "";
