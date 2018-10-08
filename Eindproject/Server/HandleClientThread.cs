@@ -31,21 +31,12 @@ namespace Server
             {
                 Round round = new Round();
 
-                //string message = ReadTextMessage(client1);
-                //Console.WriteLine(message);
-                //round.Player1Choice = ReadTextMessage(client1);
-                //WriteTextMessage(client2, round.Player1Choice);
-                //Console.WriteLine(round.Player1Choice);
-                //round.Player2Choice = ReadTextMessage(client2);
-                //WriteTextMessage(client1, round.Player2Choice);
-
                 Tuple<string, string> playerChoices = GetChoices();
+                round.Player1Choice = playerChoices.Item1;
+                round.Player2Choice = playerChoices.Item2;
 
-                WriteTextMessage(client1, "jouw keus: " + playerChoices.Item1);
-                WriteTextMessage(client1, "Tegenstanders keus: " + playerChoices.Item2);
-                WriteTextMessage(client2, "Tegenstanders keus: " + playerChoices.Item1);
-                WriteTextMessage(client2, "jouw keus: " + playerChoices.Item2);
-                //round.CheckWinner();
+                
+                round.CheckWinner();
                 if (round.RoundOver)
                 {
                     switch (round.Player1Won)
@@ -53,7 +44,8 @@ namespace Server
                         case true:
                             //Give player 1 a point
                             scores.GivePoint((int)Players.First);
-                            // --> Update points in GUI
+                            
+                            
                             break;
 
                         case false:
@@ -64,11 +56,15 @@ namespace Server
                                 break;
                             }
                             scores.GivePoint((int)Players.Second);
+                           
                             // --> Update points in GUI
                             break;
                     }
                     //Reset all the fields
-
+                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2);
+                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1);
+                    WriteTextMessage(client1, messageToClient1);
+                    WriteTextMessage(client2, messageToClient2);
                     round.RoundOver = false;
                 }
             }
@@ -80,6 +76,11 @@ namespace Server
 
         }
 
+        private string BuildString(int yourScore, int enemyScore, string enemyChoice)
+        {
+            string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice;
+            return stringToSend;
+        }
 
         private Tuple<string, string> GetChoices()
         {
