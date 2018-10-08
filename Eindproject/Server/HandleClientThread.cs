@@ -77,7 +77,7 @@ namespace Server
                             break;
                     }
                     //Reset all the fields
-                    if (gamesAmount != "x")
+                    if (gamesAmount != "x" && !round.Draw)
                     {
                         gamesToPlay--;
                     }

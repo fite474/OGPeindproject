@@ -85,6 +85,11 @@ namespace Eindproject
             scoreplayer2.Text = score2;
         }
 
+        public void SetRoundsLeft(string roundsLeft)
+        {
+            RoundsLeftLabel.Text = "Rounds left: " + roundsLeft;
+        }
+
 
         public void SetPlayerChoice(string Player1Choice, string Player2Choice)
         {

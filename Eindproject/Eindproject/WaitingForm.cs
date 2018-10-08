@@ -24,6 +24,8 @@ namespace Eindproject
         {
             InitializeComponent();
             this.client = client;
+            Client.ReadTextMessage(client);
+            this.Dispose();
         }
 
 
@@ -33,8 +35,7 @@ namespace Eindproject
         }
         private void WaitingForm_Show(object sender, EventArgs e)
         {
-            Client.ReadTextMessage(client);
-            this.Dispose();
+            
         }
 
         

@@ -41,6 +41,7 @@
             this.player2choice = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.RoundsLeftLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.player1choice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player2choice)).BeginInit();
@@ -55,7 +56,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
             this.tableLayoutPanel1.Controls.Add(this.rockbutton, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.paperbutton, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.scissorbutton, 0, 3);
@@ -68,6 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.player2choice, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.label1, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.RoundsLeftLabel, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -154,7 +156,7 @@
             // 
             this.scoreLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreLabel.AutoSize = true;
-            this.scoreLabel.Location = new System.Drawing.Point(516, 38);
+            this.scoreLabel.Location = new System.Drawing.Point(515, 38);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(142, 13);
             this.scoreLabel.TabIndex = 5;
@@ -165,7 +167,7 @@
             // 
             this.scoreplayer1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreplayer1.AutoSize = true;
-            this.scoreplayer1.Location = new System.Drawing.Point(664, 38);
+            this.scoreplayer1.Location = new System.Drawing.Point(663, 38);
             this.scoreplayer1.Name = "scoreplayer1";
             this.scoreplayer1.Size = new System.Drawing.Size(133, 13);
             this.scoreplayer1.TabIndex = 6;
@@ -175,16 +177,16 @@
             // 
             this.scoreplayer2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreplayer2.AutoSize = true;
-            this.scoreplayer2.Location = new System.Drawing.Point(803, 38);
+            this.scoreplayer2.Location = new System.Drawing.Point(802, 38);
             this.scoreplayer2.Name = "scoreplayer2";
-            this.scoreplayer2.Size = new System.Drawing.Size(139, 13);
+            this.scoreplayer2.Size = new System.Drawing.Size(140, 13);
             this.scoreplayer2.TabIndex = 7;
             this.scoreplayer2.Text = "label1";
             // 
             // player1choice
             // 
             this.player1choice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.player1choice.Location = new System.Drawing.Point(370, 309);
+            this.player1choice.Location = new System.Drawing.Point(369, 309);
             this.player1choice.Name = "player1choice";
             this.player1choice.Size = new System.Drawing.Size(140, 79);
             this.player1choice.TabIndex = 8;
@@ -194,7 +196,7 @@
             // player2choice
             // 
             this.player2choice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.player2choice.Location = new System.Drawing.Point(664, 309);
+            this.player2choice.Location = new System.Drawing.Point(663, 309);
             this.player2choice.Name = "player2choice";
             this.player2choice.Size = new System.Drawing.Size(133, 79);
             this.player2choice.TabIndex = 9;
@@ -203,7 +205,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(516, 394);
+            this.pictureBox3.Location = new System.Drawing.Point(515, 394);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(142, 84);
             this.pictureBox3.TabIndex = 10;
@@ -213,12 +215,24 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(516, 251);
+            this.label1.Location = new System.Drawing.Point(515, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Last Game Result";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // RoundsLeftLabel
+            // 
+            this.RoundsLeftLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.RoundsLeftLabel.AutoSize = true;
+            this.RoundsLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.RoundsLeftLabel.Location = new System.Drawing.Point(114, 32);
+            this.RoundsLeftLabel.Name = "RoundsLeftLabel";
+            this.RoundsLeftLabel.Size = new System.Drawing.Size(249, 25);
+            this.RoundsLeftLabel.TabIndex = 12;
+            this.RoundsLeftLabel.Text = "Rounds left:";
+            this.RoundsLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameClient
             // 
@@ -252,5 +266,6 @@
         private System.Windows.Forms.PictureBox player2choice;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label RoundsLeftLabel;
     }
 }
