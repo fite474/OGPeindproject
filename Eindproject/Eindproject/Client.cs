@@ -18,6 +18,10 @@ namespace Eindproject
             string playernumber = ReadTextMessage(client);
             if(playernumber == "1")
             {
+                Player1Screen player1Screen = new Player1Screen();
+                player1Screen.ShowDialog();
+                string gameMode = player1Screen.GameMode;
+                WriteTextMessage(client, gameMode);
                 //start keuzescherm --> nog maken
 
                 //response naar de server:
