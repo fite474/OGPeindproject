@@ -18,16 +18,17 @@ namespace Eindproject
             
             string player1Choice = "";
             string player2Choice = "";
-            string player1Score = "";
-            string player2Score = "";
+            string player1Score = "0";
+            string player2Score = "0";
             
             GameClient gameClient = new GameClient();
-            
+            gameClient.SetPlayerScore(player1Score, player2Score);
+
             while (true)
             {
                 Console.WriteLine("playerchoice" + player1Choice + player2Choice);
-                gameClient.SetPlayerChoice(player1Choice, player2Choice);
-                gameClient.SetPlayerScore(player1Score, player2Score);
+                
+                
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);
@@ -50,7 +51,8 @@ namespace Eindproject
                 //player2Choice = ReadTextMessage(client);
                 Console.WriteLine("other" + player2Choice);
                 Console.WriteLine("end string" + player1Choice + player2Choice);
-
+                gameClient.SetPlayerScore(player1Score, player2Score);
+                gameClient.SetPlayerChoice(player1Choice, player2Choice);
             }
 
         }
