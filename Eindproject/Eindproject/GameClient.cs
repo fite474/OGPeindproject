@@ -100,7 +100,7 @@ namespace Eindproject
                         player1choice.Image = Eindproject.Properties.Resource1.paper;
                         break;
                     }
-                case "Siccors":
+                case "Scissors":
                     {
                         player1choice.Image = Eindproject.Properties.Resource1.scissors;
                         break;
@@ -134,7 +134,7 @@ namespace Eindproject
                         player2choice.Image = Eindproject.Properties.Resource1.paper;
                         break;
                     }
-                case "Siccors":
+                case "Scissors":
                     {
                         player2choice.Image = Eindproject.Properties.Resource1.scissors;
                         break;
