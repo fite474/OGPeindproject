@@ -13,32 +13,31 @@ namespace Eindproject
     {
         static void Main(string[] args)
         {
-            TcpClient client = new TcpClient("127.0.0.1", 1330);
-
-            //int score = 0;
+            //TcpClient client = new TcpClient("10.254.187.28", 1330);
+            
             string score = "0";
             GameClient gameClient = new GameClient();
-            //Application.Run(gameClient);
-            while (true)
-            {
+            gameClient.Show();
+            //while (true)
+            //{
 
-                //gameClient.setScore(int.Parse(score));
-                //string message = ReadTextMessage(client);
-                //Console.Write(message);
-                //gameClient.setQuestion(message);
-                gameClient.ShowDialog();
+            //    //gameClient.setScore(int.Parse(score));
+            //    //string message = ReadTextMessage(client);
+            //    //Console.Write(message);
+            //    //gameClient.setQuestion(message);
+            //    gameClient.Show();
 
 
-                string message = gameClient.GetAwnser();
+            //    string message = gameClient.GetAwnser();
 
-                WriteTextMessage(client, message);
-                message = ReadTextMessage(client);
-                Console.WriteLine("rechieved: " + message);
-                //score = ReadTextMessage(client);
-                //Console.WriteLine(score);
+            //    //WriteTextMessage(client, message);
+            //    //message = ReadTextMessage(client);
+            //    //Console.WriteLine("recieved: " + message);
+            //    //score = ReadTextMessage(client);
+            //    //Console.WriteLine(score);
                 
 
-            }
+            //}
 
         }
         public static void WriteTextMessage(TcpClient client, string message)

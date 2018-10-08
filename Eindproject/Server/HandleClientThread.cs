@@ -10,13 +10,16 @@ namespace Server
 {
     class HandleClientThread
     {
+        private TcpClient client1;
+        private TcpClient client2;
+
         enum Players : int
         {
             First = 1, Second = 2
         };
         public HandleClientThread(object obj1, object obj2) {
-            TcpClient client1 = obj1 as TcpClient;
-            TcpClient client2 = obj2 as TcpClient;
+            client1 = obj1 as TcpClient;
+            client2 = obj2 as TcpClient;
             int x = 0;
             Score scores = new Score();
             while (true) {
@@ -24,12 +27,18 @@ namespace Server
 
                 //string message = ReadTextMessage(client1);
                 //Console.WriteLine(message);
-                round.Player1Choice = ReadTextMessage(client1);
-                WriteTextMessage(client2, round.Player1Choice);
+                //round.Player1Choice = ReadTextMessage(client1);
+                //WriteTextMessage(client2, round.Player1Choice);
                 //Console.WriteLine(round.Player1Choice);
-                round.Player2Choice = ReadTextMessage(client2);
-                WriteTextMessage(client1, round.Player2Choice);
+                //round.Player2Choice = ReadTextMessage(client2);
+                //WriteTextMessage(client1, round.Player2Choice);
 
+                Tuple<string, string> tupleke = GetChoices();
+
+                WriteTextMessage(client1, "jouw keus: " + tupleke.Item1);
+                WriteTextMessage(client1, "Tegenstanders keus: " + tupleke.Item2);
+                WriteTextMessage(client2, "Tegenstanders keus: " + tupleke.Item1);
+                WriteTextMessage(client2, "jouw keus: " + tupleke.Item2);
                 //round.CheckWinner();
                 if (round.RoundOver)
                 {
@@ -60,6 +69,10 @@ namespace Server
         }
 
         
+        private Tuple<string, string> GetChoices()
+        {
+            return new Tuple<string, string>(ReadTextMessage(client1), ReadTextMessage(client2));
+        }
 
 
         public static void WriteTextMessage(TcpClient client, string message)

@@ -14,7 +14,7 @@ namespace Server
         {
             int clients = 0;
             IPAddress localhost = IPAddress.Parse("127.0.0.1");
-            TcpListener listener = new System.Net.Sockets.TcpListener(localhost, 1330);
+            TcpListener listener = new System.Net.Sockets.TcpListener(IPAddress.Any, 1330);
 
             listener.Start();
 
@@ -30,7 +30,10 @@ namespace Server
             {
                 Console.WriteLine("Waiting for connection...");
                 TcpClient client1 = listener.AcceptTcpClient();
+                Console.WriteLine("\nClient 1 connected!");
                 TcpClient client2 = listener.AcceptTcpClient();
+                Console.WriteLine("\nClient 2 connected!");
+                Console.WriteLine("Starting session...");
                 HandleClientThread task = new HandleClientThread(client1, client2);
                 
 
