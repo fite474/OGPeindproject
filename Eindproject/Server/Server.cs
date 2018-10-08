@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Server
@@ -12,7 +13,7 @@ namespace Server
     {
         static void Main(string[] args)
         {
-            int clients = 0;
+            
             IPAddress localhost = IPAddress.Parse("127.0.0.1");
             TcpListener listener = new System.Net.Sockets.TcpListener(IPAddress.Any, 1330);
 
@@ -34,12 +35,18 @@ namespace Server
                 TcpClient client2 = listener.AcceptTcpClient();
                 Console.WriteLine("\nClient 2 connected!");
                 Console.WriteLine("Starting session...");
-                HandleClientThread task = new HandleClientThread(client1, client2);
-                
+
+                Tuple<TcpClient, TcpClient> clients = new Tuple<TcpClient, TcpClient>(client1, client2);
+
+                HandleClientThread task = new HandleClientThread();
+                Thread thread = new Thread(task.HandleSeshion);
+                thread.Start(clients);
 
 
             }
         }
+
+        
     }
 }
 
