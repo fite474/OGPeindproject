@@ -138,7 +138,6 @@ namespace Server
         {
             Player1Choice = "niets";
             Player2Choice = "niets";
-            RoundOver = false;
             Player1Won = false;
             Draw = false;
         }
