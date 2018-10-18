@@ -28,6 +28,7 @@ namespace Server
             Score scores = new Score();
             Round round = new Round();
             int gamesToPlay = 0;
+            bool gameOver = false;
 
 
             WriteTextMessage(client1, "1");
@@ -50,6 +51,7 @@ namespace Server
 
             while (gamesToPlay > 0) //aftellen van aantal games
             {
+                
                 string winner = "";
                 
                 Tuple<string, string> playerChoices = GetChoices();
@@ -87,8 +89,8 @@ namespace Server
                     {
                         gamesToPlay--;
                     }
-                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, winner);
-                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, winner);
+                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, winner, gameOver);
+                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, winner, gameOver);
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     round.RoundOver = false;
@@ -98,12 +100,12 @@ namespace Server
                 }
                 
             }
-
+            gameOver = true;
             //Show players who won
             int finalScorePlayer1 = scores.Player1Score;
             int finalScorePlayer2 = scores.Player2Score;
-            string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "win");
-            string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "lose");
+            string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "win", gameOver);
+            string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "lose", gameOver);
 
             if (finalScorePlayer1 < finalScorePlayer2)
             {
@@ -124,11 +126,20 @@ namespace Server
 
         }
 
-        private string BuildString(int yourScore, int enemyScore, string enemyChoice, int gamesToPlay, string winStatus)
+        private string BuildString(int yourScore, int enemyScore, string enemyChoice, int gamesToPlay, string winStatus, bool gameOver)
         {
+            string isGameOver = "";
+            if(gameOver)
+            {
+                isGameOver = "yes";
+            }
+            else
+            {
+                isGameOver = "no";
+            }
 
             //TODO: games left meesturen --> DONE
-            string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice + "--" + gamesToPlay.ToString() + "--" + winStatus;
+            string stringToSend = yourScore.ToString() + "--" + enemyScore.ToString() + "--" + enemyChoice + "--" + gamesToPlay.ToString() + "--" + winStatus + "--"+ isGameOver;
             return stringToSend;
         }
 

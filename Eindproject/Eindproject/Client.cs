@@ -41,7 +41,8 @@ namespace Eindproject
             string player1Score = "0";
             string player2Score = "0";
             string roundsLeft = ReadTextMessage(client);
-            string gameOver = "";
+            string roundWinner = "";
+            bool gameOver = false;
             
             GameClient gameClient = new GameClient();
            
@@ -49,18 +50,11 @@ namespace Eindproject
             gameClient.SetRoundsLeft(roundsLeft);
 
 
-            while (true)
+            while (!gameOver)
             {
                 Console.WriteLine("playerchoice" + player1Choice + player2Choice);
 
-                if (gameOver.Equals("win"))
-                {
-                    gameClient.SetWinLose("WINNER!!");
-                }
-                if (gameOver.Equals("lose"))
-                {
-                    gameClient.SetWinLose("LOSER!!");
-                }
+                
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);
@@ -79,9 +73,13 @@ namespace Eindproject
                 player2Score = responses[1];
                 player2Choice = responses[2];
                 roundsLeft = responses[3];
-                gameOver = responses[4];
-
-                gameClient.SetWinLoseImage(gameOver);
+                roundWinner = responses[4];
+                string isGameOver = responses[5];
+                if(isGameOver == "yes")
+                {
+                    gameOver = true;
+                }
+                gameClient.SetWinLoseImage(roundWinner);
 
                 Console.WriteLine("mine: " + player1Choice);
                 //player2Choice = ReadTextMessage(client);
@@ -91,6 +89,14 @@ namespace Eindproject
                 gameClient.SetPlayerChoice(player1Choice, player2Choice);
                 gameClient.SetRoundsLeft(roundsLeft);
                 
+            }
+            if (roundWinner.Equals("win"))
+            {
+                gameClient.SetWinLose("WINNER!!");
+            }
+            if (roundWinner.Equals("lose"))
+            {
+                gameClient.SetWinLose("LOSER!!");
             }
 
         }
