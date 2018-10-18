@@ -97,13 +97,13 @@ namespace Eindproject
             if (roundWinner.Equals("win"))
             {
                 WinLoseScreen endscreen = new WinLoseScreen(roundWinner);
-                endscreen.Show();
+                endscreen.ShowDialog();
                 
             }
             if (roundWinner.Equals("lose"))
             {
                 WinLoseScreen endscreen = new WinLoseScreen(roundWinner);
-                endscreen.Show();
+                endscreen.ShowDialog();
             }
 
 

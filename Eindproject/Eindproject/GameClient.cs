@@ -24,8 +24,8 @@ namespace Eindproject
             this.rockbutton.BackgroundImage = Eindproject.Properties.Resource1.rock;
             this.paperbutton.BackgroundImage = Eindproject.Properties.Resource1.paper;
             this.scissorbutton.BackgroundImage = Eindproject.Properties.Resource1.scissors;
-            this.lizardButton.BackgroundImage = Eindproject.Properties.Resource1.spock;
-            this.spockButton.BackgroundImage = Eindproject.Properties.Resource1.lizard;
+            this.lizardButton.BackgroundImage = Eindproject.Properties.Resource1.lizard;
+            this.spockButton.BackgroundImage = Eindproject.Properties.Resource1.spock;
             //player1choice.Image = Eindproject.Properties.Resource1.lizard;
             //player2choice.Image = Eindproject.Properties.Resource1.lizard;
 

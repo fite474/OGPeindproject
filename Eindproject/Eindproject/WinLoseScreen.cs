@@ -23,7 +23,7 @@ namespace Eindproject
         {
             InitializeComponent();
             this.winner = winorLose;
-            if(winner == "winner")
+            if(winner == "win")
             {
                 WinLoseLabel.Text = "You won!";
                 WinOrLosePictureBox.Image = Properties.Resource1.Winner;

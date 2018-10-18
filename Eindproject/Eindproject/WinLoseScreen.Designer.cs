@@ -63,7 +63,7 @@
             this.WinOrLosePictureBox.Location = new System.Drawing.Point(202, 150);
             this.WinOrLosePictureBox.Name = "WinOrLosePictureBox";
             this.WinOrLosePictureBox.Size = new System.Drawing.Size(393, 295);
-            this.WinOrLosePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.WinOrLosePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.WinOrLosePictureBox.TabIndex = 0;
             this.WinOrLosePictureBox.TabStop = false;
             // 
