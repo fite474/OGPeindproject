@@ -18,6 +18,12 @@ namespace Eindproject
             Console.Beep();
             
             TcpClient client = new TcpClient("10.254.187.28", 1330);
+            Console.WriteLine(@"
+          =-=-=-=-=-=-=-=-=-=-=-=-=-=
+     -=-=-=-=      Connected      =-=-=-=-
+--=-=-=-             to a              -=-=-=--   
+     -=-=-=-=     motherfucker    =-=-=-=-
+          =-=-=-=-=-=-=-=-=-=-=-=-=-=");
             string playernumber = ReadTextMessage(client);
             if (playernumber == "1")
             {
