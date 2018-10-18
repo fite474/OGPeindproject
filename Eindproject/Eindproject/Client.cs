@@ -43,14 +43,21 @@ namespace Eindproject
             string gameOver = "";
             
             GameClient gameClient = new GameClient();
-            EndScreen endScreen = new EndScreen();
+           
             gameClient.SetPlayerScore(player1Score, player2Score);
 
             while (true)
             {
                 Console.WriteLine("playerchoice" + player1Choice + player2Choice);
-                
-                
+
+                if (gameOver.Equals("win"))
+                {
+                    gameClient.SetWinLose("WINNER!!");
+                }
+                if (gameOver.Equals("lose"))
+                {
+                    gameClient.SetWinLose("LOSER!!");
+                }
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);
@@ -70,14 +77,7 @@ namespace Eindproject
                 player2Choice = responses[2];
                 roundsLeft = responses[3];
                 gameOver = responses[4];
-                if (gameOver.Equals("win"))
-                {
-                    gameClient.SetWinLose("WINNER!!");
-                }
-                if (gameOver.Equals("lose"))
-                {
-                    gameClient.SetWinLose("LOSER!!");
-                }
+                
 
 
                 Console.WriteLine("mine: " + player1Choice);
