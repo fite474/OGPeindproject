@@ -69,6 +69,12 @@
     <Compile Include="WaitingForm.Designer.cs">
       <DependentUpon>WaitingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinLoseScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinLoseScreen.Designer.cs">
+      <DependentUpon>WinLoseScreen.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WaitingForm.resx">
       <DependentUpon>WaitingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinLoseScreen.resx">
+      <DependentUpon>WinLoseScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +120,8 @@
     <EmbeddedResource Include="Images\spock.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Images\Winner.jpg" />
+    <None Include="Images\Lose.jpg" />
     <None Include="Images\Draw.jpg" />
     <Content Include="Images\LoserCross.png" />
     <Content Include="Images\WinnerCheck.png" />

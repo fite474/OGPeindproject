@@ -14,7 +14,7 @@ namespace Eindproject
     {
         static void Main(string[] args)
         {
-            TcpClient client = new TcpClient("10.255.11.28", 1330);
+            TcpClient client = new TcpClient("10.254.187.28", 1330);
             string playernumber = ReadTextMessage(client);
             if (playernumber == "1")
             {
@@ -45,7 +45,8 @@ namespace Eindproject
             bool gameOver = false;
             
             GameClient gameClient = new GameClient();
-           
+          //  Application.Run(gameClient);
+
             gameClient.SetPlayerScore(player1Score, player2Score);
             gameClient.SetRoundsLeft(roundsLeft);
 
@@ -54,14 +55,14 @@ namespace Eindproject
             {
                 Console.WriteLine("playerchoice" + player1Choice + player2Choice);
 
-                
+
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);
                 //gameClient.setQuestion(message);
                 gameClient.ShowDialog();
 
-               
+
                 player1Choice = gameClient.GetAwnser();
 
                 
@@ -92,15 +93,24 @@ namespace Eindproject
                 gameClient.SetRoundsLeft(roundsLeft);
                 
             }
+
             if (roundWinner.Equals("win"))
             {
-                gameClient.SetWinLose("WINNER!!");
+                WinLoseScreen endscreen = new WinLoseScreen(roundWinner);
+                endscreen.Show();
+                
             }
             if (roundWinner.Equals("lose"))
             {
-                gameClient.SetWinLose("LOSER!!");
+                WinLoseScreen endscreen = new WinLoseScreen(roundWinner);
+                endscreen.Show();
             }
-            while(true)
+
+
+
+
+
+            while (true)
             {
 
             }

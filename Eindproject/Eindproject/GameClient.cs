@@ -18,7 +18,7 @@ namespace Eindproject
         public GameClient()
         {
             InitializeComponent();
-
+            
             //this.button1.BackgroundImage = Eindproject.Properties.Resource1.lizard;
 
             this.rockbutton.BackgroundImage = Eindproject.Properties.Resource1.rock;
