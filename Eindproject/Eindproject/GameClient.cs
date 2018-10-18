@@ -181,12 +181,12 @@ namespace Eindproject
         {
             switch(winlose)
             {
-                case "player1":
+                case "you":
                     {
                         WinLosePictureBox.Image = Properties.Resource1.WinnerCheck;
                         break;
                     }
-                case "player2":
+                case "enemy":
                     {
                         WinLosePictureBox.Image = Properties.Resource1.LoserCross;
                         break;

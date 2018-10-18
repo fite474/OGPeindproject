@@ -49,7 +49,7 @@ namespace Server
             WriteTextMessage(client2, gamesToPlay.ToString());
 
 
-            while (gamesToPlay > 0) //aftellen van aantal games
+            while (gamesToPlay > 1) //aftellen van aantal games
             {
                 
                 string winner = "";
@@ -89,8 +89,25 @@ namespace Server
                     {
                         gamesToPlay--;
                     }
-                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, winner, gameOver);
-                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, winner, gameOver);
+                    string winnerPlayer1;
+                    string winnerPlayer2;
+                    if(winner == "player1")
+                    {
+                        winnerPlayer1 = "you";
+                        winnerPlayer2 = "enemy";
+                    }
+                    else if(winner == "player2")
+                    {
+                        winnerPlayer1 = "enemy";
+                        winnerPlayer2 = "you";
+                    }
+                    else
+                    {
+                        winnerPlayer1 = "draw";
+                        winnerPlayer2 = "draw";
+                    }
+                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, winnerPlayer1, gameOver);
+                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, winnerPlayer2, gameOver);
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     round.RoundOver = false;

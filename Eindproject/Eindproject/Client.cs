@@ -75,12 +75,14 @@ namespace Eindproject
                 roundsLeft = responses[3];
                 roundWinner = responses[4];
                 string isGameOver = responses[5];
-                if(isGameOver == "yes")
+                if (isGameOver == "yes")
                 {
                     gameOver = true;
                 }
-                gameClient.SetWinLoseImage(roundWinner);
-
+                else
+                {
+                    gameClient.SetWinLoseImage(roundWinner);
+                }
                 Console.WriteLine("mine: " + player1Choice);
                 //player2Choice = ReadTextMessage(client);
                 Console.WriteLine("other" + player2Choice);
@@ -97,6 +99,10 @@ namespace Eindproject
             if (roundWinner.Equals("lose"))
             {
                 gameClient.SetWinLose("LOSER!!");
+            }
+            while(true)
+            {
+
             }
 
         }
