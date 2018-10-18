@@ -15,6 +15,7 @@ namespace Eindproject
         private static List<string> gameResults;
         static void Main(string[] args)
         {
+            Console.Beep();
             
             TcpClient client = new TcpClient("10.254.187.28", 1330);
             string playernumber = ReadTextMessage(client);
@@ -58,7 +59,7 @@ namespace Eindproject
             {
                 Console.WriteLine("playerchoice" + player1Choice + player2Choice);
 
-
+                Console.Beep();
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);

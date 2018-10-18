@@ -18,17 +18,11 @@ namespace Eindproject
         public GameClient()
         {
             InitializeComponent();
-            
-            //this.button1.BackgroundImage = Eindproject.Properties.Resource1.lizard;
-
             this.rockbutton.BackgroundImage = Eindproject.Properties.Resource1.rock;
             this.paperbutton.BackgroundImage = Eindproject.Properties.Resource1.paper;
             this.scissorbutton.BackgroundImage = Eindproject.Properties.Resource1.scissors;
             this.lizardButton.BackgroundImage = Eindproject.Properties.Resource1.lizard;
             this.spockButton.BackgroundImage = Eindproject.Properties.Resource1.spock;
-            //player1choice.Image = Eindproject.Properties.Resource1.lizard;
-            //player2choice.Image = Eindproject.Properties.Resource1.lizard;
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,14 +56,12 @@ namespace Eindproject
         private void button5_Click(object sender, EventArgs e)
         {
             awnser = "Spock";
-
-           Console.WriteLine(awnser);
-           this.Close();
-
+            Console.WriteLine(awnser);
+            this.Close();
         }
 
         public string GetAwnser() {
-            //this.Close();
+            
             return awnser;
         }
 
@@ -89,19 +81,6 @@ namespace Eindproject
         {
             RoundsLeftLabel.Text = "Rounds left: " + roundsLeft;
         }
-
-        public void SetWinLose(string winOrLoser)
-        {
-            WinLoseLabel.Text = winOrLoser;
-            WinLoseLabel.Visible = true;
-            rockbutton.Visible = false;
-            paperbutton.Visible = false;
-            scissorbutton.Visible = false;
-            spockButton.Visible = false;
-            lizardButton.Visible = false;
-           
-        }
-
 
         public void SetPlayerChoice(string Player1Choice, string Player2Choice)
         {

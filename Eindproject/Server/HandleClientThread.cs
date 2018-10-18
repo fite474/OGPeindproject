@@ -48,13 +48,13 @@ namespace Server
             WriteTextMessage(client1, gamesToPlay.ToString());
             WriteTextMessage(client2, gamesToPlay.ToString());
 
+            Tuple<string, string> playerChoices = new Tuple<string, string>("niets", "niets");
 
             while (gamesToPlay > 1) //aftellen van aantal games
             {
                 
                 string winner = "";
-                
-                Tuple<string, string> playerChoices = GetChoices();
+                playerChoices = GetChoices();
                 round.Player1Choice = playerChoices.Item1;
                 round.Player2Choice = playerChoices.Item2;
 
@@ -121,16 +121,19 @@ namespace Server
             //Show players who won
             int finalScorePlayer1 = scores.Player1Score;
             int finalScorePlayer2 = scores.Player2Score;
-            string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "win", gameOver);
-            string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, "", 0, "lose", gameOver);
+            
 
             if (finalScorePlayer1 < finalScorePlayer2)
             {
+                string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item1, 0, "win", gameOver);
+                string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item2, 0, "lose", gameOver);
                 WriteTextMessage(client1, losePlayer);
                 WriteTextMessage(client2, winPlayer);
             }
             else
             {
+                string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item2, 0, "win", gameOver);
+                string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item1, 0, "lose", gameOver);
                 WriteTextMessage(client2, losePlayer);
                 WriteTextMessage(client1, winPlayer);
             }
