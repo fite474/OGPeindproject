@@ -125,7 +125,7 @@ namespace Server
 
             if (finalScorePlayer1 < finalScorePlayer2)
             {
-                string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item1, 0, "win", gameOver);
+                string winPlayer = BuildString(finalScorePlayer2, finalScorePlayer1, playerChoices.Item1, 0, "win", gameOver);
                 string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item2, 0, "lose", gameOver);
                 WriteTextMessage(client1, losePlayer);
                 WriteTextMessage(client2, winPlayer);
@@ -133,7 +133,7 @@ namespace Server
             else
             {
                 string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item2, 0, "win", gameOver);
-                string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item1, 0, "lose", gameOver);
+                string losePlayer = BuildString(finalScorePlayer2, finalScorePlayer1, playerChoices.Item1, 0, "lose", gameOver);
                 WriteTextMessage(client2, losePlayer);
                 WriteTextMessage(client1, winPlayer);
             }
