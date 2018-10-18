@@ -43,11 +43,15 @@ namespace Server
                 gamesToPlay = Int32.Parse(gamesAmount);
             }
             WriteTextMessage(client2, "starting");
-                
-            
+
+            WriteTextMessage(client1, gamesToPlay.ToString());
+            WriteTextMessage(client2, gamesToPlay.ToString());
+
+
             while (gamesToPlay > 0) //aftellen van aantal games
             {
-                
+                WriteTextMessage(client1, gamesToPlay.ToString());
+                WriteTextMessage(client2, gamesToPlay.ToString());
 
                 Tuple<string, string> playerChoices = GetChoices();
                 round.Player1Choice = playerChoices.Item1;

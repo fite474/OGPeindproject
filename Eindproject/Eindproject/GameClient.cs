@@ -170,6 +170,10 @@ namespace Eindproject
 
             }
 
+            Player1IndicatorLabel.Visible = true;
+            Player2IndicatorLabel.Visible = true;
+            WinnerIndicatorLabel.Visible = true;
+
 
         }
     }

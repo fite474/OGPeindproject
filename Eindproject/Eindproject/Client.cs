@@ -35,16 +35,19 @@ namespace Eindproject
                 //waitingForm.Close();
                 //start wachtscherm --> nog maken
             }
+
             string player1Choice = "";
             string player2Choice = "";
             string player1Score = "0";
             string player2Score = "0";
-            string roundsLeft = "0";
+            string roundsLeft = ReadTextMessage(client);
             string gameOver = "";
             
             GameClient gameClient = new GameClient();
            
             gameClient.SetPlayerScore(player1Score, player2Score);
+            gameClient.SetRoundsLeft(roundsLeft);
+
 
             while (true)
             {
