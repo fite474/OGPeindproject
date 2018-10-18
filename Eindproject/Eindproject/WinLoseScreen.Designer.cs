@@ -104,6 +104,7 @@
             this.GameResultPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameResultPanel.AutoScroll = true;
             this.GameResultPanel.Location = new System.Drawing.Point(601, 3);
             this.GameResultPanel.Name = "GameResultPanel";
             this.GameResultPanel.Size = new System.Drawing.Size(194, 442);

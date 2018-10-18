@@ -13,17 +13,19 @@ namespace Eindproject
     public partial class WinLoseScreen : Form
     {
         string winner;
+        Label currentMatchScore;
 
         public WinLoseScreen()
         {
             InitializeComponent();
         }
 
-        public WinLoseScreen(string winorLose)
+        public WinLoseScreen(string winorLose, List<string> gameHistory)
         {
             InitializeComponent();
+            SetGameHistory(gameHistory);
             this.winner = winorLose;
-            if(winner == "win")
+            if (winner == "win")
             {
                 WinLoseLabel.Text = "You won!";
                 WinOrLosePictureBox.Image = Properties.Resource1.Winner;
@@ -46,8 +48,33 @@ namespace Eindproject
 
         }
 
-        private void SetGameHistory(string[] historyList) {
+        private void SetGameHistory(List<string> historyList)
+        {
+            int distanceScaler = 0;
+            int pictureBoxHeight = 22;
+            PictureBox p1 = new PictureBox
+            {
+                //Height = pictureBoxHeight,
+                Width = 170,
+                BorderStyle = BorderStyle.Fixed3D,
+                BackColor = Color.LightGray
+            };
+            foreach (string score in historyList)
+            {
+                currentMatchScore = new Label();
+                currentMatchScore.Width = 150;
+                currentMatchScore.Text = score;
+                currentMatchScore.Top = distanceScaler;
 
+                p1.Controls.Add(currentMatchScore);
+                distanceScaler += 22;
+                pictureBoxHeight += 22;
+                Console.WriteLine("picturebox heigt: "+ pictureBoxHeight);
+
+            }
+            p1.Height = pictureBoxHeight;
+           
+            GameResultPanel.Controls.Add(p1);
         }
     }
 }

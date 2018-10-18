@@ -12,7 +12,7 @@ namespace Eindproject
 {
     class Client
     {
-        private static string[] GameResults;
+        private static List<string> gameResults;
         static void Main(string[] args)
         {
             
@@ -45,13 +45,14 @@ namespace Eindproject
             string roundsLeft = ReadTextMessage(client);
             string roundWinner = "";
             bool gameOver = false;
+            int roundNumber = 0;
             
             GameClient gameClient = new GameClient();
           //  Application.Run(gameClient);
 
             gameClient.SetPlayerScore(player1Score, player2Score);
             gameClient.SetRoundsLeft(roundsLeft);
-
+            gameResults = new List<string>();
 
             while (!gameOver)
             {
@@ -77,6 +78,9 @@ namespace Eindproject
                 player2Choice = responses[2];
                 roundsLeft = responses[3];
                 roundWinner = responses[4];
+                string matchResult = (player1Choice + "  " + player1Score + " - " + player2Score + "  " + player2Choice);
+                gameResults.Add(matchResult);
+                roundNumber++;
                 string isGameOver = responses[5];
                 if (isGameOver == "yes")
                 {
@@ -98,13 +102,13 @@ namespace Eindproject
 
             if (roundWinner.Equals("win"))
             {
-                WinLoseScreen endscreen = new WinLoseScreen(roundWinner);
+                WinLoseScreen endscreen = new WinLoseScreen(roundWinner, gameResults);
                 endscreen.ShowDialog();
                 
             }
             if (roundWinner.Equals("lose"))
             {
-                WinLoseScreen endscreen = new WinLoseScreen(roundWinner);
+                WinLoseScreen endscreen = new WinLoseScreen(roundWinner, gameResults);
                 endscreen.ShowDialog();
             }
 
