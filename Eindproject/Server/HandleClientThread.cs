@@ -29,6 +29,7 @@ namespace Server
             Round round = new Round();
             int gamesToPlay = 0;
             bool gameOver = false;
+            bool lastGameDraw = false;
 
 
             WriteTextMessage(client1, "1");
@@ -50,7 +51,7 @@ namespace Server
 
             Tuple<string, string> playerChoices = new Tuple<string, string>("niets", "niets");
 
-            while (gamesToPlay > 1 || !round.RoundOver) //aftellen van aantal games
+            while (gamesToPlay > 1 || !round.RoundOver || lastGameDraw) //aftellen van aantal games
             {
                 round.RoundOver = false;
                 string winner = "";
@@ -78,8 +79,10 @@ namespace Server
                             {
                                 //Show the players that it was a draw
                                 winner = "draw";
-                                if(gamesToPlay == 1)
-                                gamesToPlay++;
+                                if (gamesToPlay == 1)
+                                {
+                                    gamesToPlay++;
+                                }
                                 break;
                             }
                             scores.GivePoint((int)Players.Second);
@@ -99,16 +102,20 @@ namespace Server
                     {
                         winnerPlayer1 = "you";
                         winnerPlayer2 = "enemy";
+                        lastGameDraw = false;
+
                     }
                     else if(winner == "player2")
                     {
                         winnerPlayer1 = "enemy";
                         winnerPlayer2 = "you";
+                        lastGameDraw = false;
                     }
                     else
                     {
                         winnerPlayer1 = "draw";
                         winnerPlayer2 = "draw";
+                        lastGameDraw = true;
                     }
                     string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, winnerPlayer1, gameOver);
                     string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, winnerPlayer2, gameOver);
@@ -129,6 +136,7 @@ namespace Server
 
             if (finalScorePlayer1 < finalScorePlayer2)
             {
+                finalScorePlayer2++;
                 string winPlayer = BuildString(finalScorePlayer2, finalScorePlayer1, playerChoices.Item1, 0, "win", gameOver);
                 string losePlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item2, 0, "lose", gameOver);
                 WriteTextMessage(client1, losePlayer);
@@ -139,6 +147,7 @@ namespace Server
             }
             else
             {
+                finalScorePlayer1++;
                 string winPlayer = BuildString(finalScorePlayer1, finalScorePlayer2, playerChoices.Item2, 0, "win", gameOver);
                 string losePlayer = BuildString(finalScorePlayer2, finalScorePlayer1, playerChoices.Item1, 0, "lose", gameOver);
                 WriteTextMessage(client2, losePlayer);
