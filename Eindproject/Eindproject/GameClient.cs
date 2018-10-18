@@ -176,5 +176,27 @@ namespace Eindproject
 
 
         }
+
+        public void SetWinLoseImage(string winlose)
+        {
+            switch(winlose)
+            {
+                case "player1":
+                    {
+                        WinLosePictureBox.Image = Properties.Resource1.WinnerCheck;
+                        break;
+                    }
+                case "player2":
+                    {
+                        WinLosePictureBox.Image = Properties.Resource1.LoserCross;
+                        break;
+                    }
+                case "draw":
+                    {
+                        WinLosePictureBox.Image = Properties.Resource1.Draw;
+                        break;
+                    }
+            }
+        }
     }
 }

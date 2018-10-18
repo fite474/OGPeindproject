@@ -50,9 +50,8 @@ namespace Server
 
             while (gamesToPlay > 0) //aftellen van aantal games
             {
-                WriteTextMessage(client1, gamesToPlay.ToString());
-                WriteTextMessage(client2, gamesToPlay.ToString());
-
+                string winner = "";
+                
                 Tuple<string, string> playerChoices = GetChoices();
                 round.Player1Choice = playerChoices.Item1;
                 round.Player2Choice = playerChoices.Item2;
@@ -66,6 +65,7 @@ namespace Server
                         case true:
                             //Give player 1 a point
                             scores.GivePoint((int)Players.First);
+                            winner = "player1";
                             break;
 
                         case false:
@@ -73,9 +73,11 @@ namespace Server
                             if (round.Draw)
                             {
                                 //Show the players that it was a draw
+                                winner = "draw";
                                 break;
                             }
                             scores.GivePoint((int)Players.Second);
+                            winner = "player2";
                            
                             // --> Update points in GUI
                             break;
@@ -85,8 +87,8 @@ namespace Server
                     {
                         gamesToPlay--;
                     }
-                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, "");
-                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, "");
+                    string messageToClient1 = BuildString(scores.Player1Score, scores.Player2Score, playerChoices.Item2, gamesToPlay, winner);
+                    string messageToClient2 = BuildString(scores.Player2Score, scores.Player1Score, playerChoices.Item1, gamesToPlay, winner);
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     round.RoundOver = false;

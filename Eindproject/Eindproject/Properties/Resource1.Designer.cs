@@ -63,9 +63,29 @@ namespace Eindproject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Draw {
+            get {
+                object obj = ResourceManager.GetObject("Draw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lizard {
             get {
                 object obj = ResourceManager.GetObject("lizard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LoserCross {
+            get {
+                object obj = ResourceManager.GetObject("LoserCross", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace Eindproject.Properties {
         internal static System.Drawing.Bitmap spock {
             get {
                 object obj = ResourceManager.GetObject("spock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WinnerCheck {
+            get {
+                object obj = ResourceManager.GetObject("WinnerCheck", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

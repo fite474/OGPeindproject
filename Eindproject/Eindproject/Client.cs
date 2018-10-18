@@ -14,7 +14,7 @@ namespace Eindproject
     {
         static void Main(string[] args)
         {
-            TcpClient client = new TcpClient("10.254.187.28", 1330);
+            TcpClient client = new TcpClient("10.255.11.28", 1330);
             string playernumber = ReadTextMessage(client);
             if (playernumber == "1")
             {
@@ -67,7 +67,7 @@ namespace Eindproject
                 //gameClient.setQuestion(message);
                 gameClient.ShowDialog();
 
-
+               
                 player1Choice = gameClient.GetAwnser();
 
                 
@@ -80,8 +80,8 @@ namespace Eindproject
                 player2Choice = responses[2];
                 roundsLeft = responses[3];
                 gameOver = responses[4];
-                
 
+                gameClient.SetWinLoseImage(gameOver);
 
                 Console.WriteLine("mine: " + player1Choice);
                 //player2Choice = ReadTextMessage(client);
