@@ -32,6 +32,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.WinLoseLabel = new System.Windows.Forms.Label();
             this.WinOrLosePictureBox = new System.Windows.Forms.PictureBox();
+            this.GameResultPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WinOrLosePictureBox)).BeginInit();
@@ -48,6 +49,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.GameResultPanel, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -97,6 +99,16 @@
             this.WinOrLosePictureBox.TabIndex = 1;
             this.WinOrLosePictureBox.TabStop = false;
             // 
+            // GameResultPanel
+            // 
+            this.GameResultPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.GameResultPanel.Location = new System.Drawing.Point(601, 3);
+            this.GameResultPanel.Name = "GameResultPanel";
+            this.GameResultPanel.Size = new System.Drawing.Size(194, 442);
+            this.GameResultPanel.TabIndex = 1;
+            // 
             // WinLoseScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label WinLoseLabel;
         private System.Windows.Forms.PictureBox WinOrLosePictureBox;
+        private System.Windows.Forms.Panel GameResultPanel;
     }
 }
