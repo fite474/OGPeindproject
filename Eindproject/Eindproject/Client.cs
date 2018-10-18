@@ -12,8 +12,10 @@ namespace Eindproject
 {
     class Client
     {
+        private static string[] GameResults;
         static void Main(string[] args)
         {
+            
             TcpClient client = new TcpClient("10.254.187.28", 1330);
             string playernumber = ReadTextMessage(client);
             if (playernumber == "1")
@@ -116,6 +118,9 @@ namespace Eindproject
             }
 
         }
+
+        
+
         public static void WriteTextMessage(TcpClient client, string message)
         {
 

@@ -33,6 +33,7 @@ namespace Eindproject
                 WinLoseLabel.Text = "You lost...";
                 WinOrLosePictureBox.Image = Properties.Resource1.Lose;
             }
+            //GameResultPanel
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -42,6 +43,10 @@ namespace Eindproject
 
         private void WinOrLosePictureBox_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void SetGameHistory(string[] historyList) {
 
         }
     }
