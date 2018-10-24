@@ -53,7 +53,7 @@ namespace Server
 
             while (gamesToPlay > 1 || !round.RoundOver || lastGameDraw) //aftellen van aantal games
             {
-                round.RoundOver = false;
+                round.Reset();
                 string winner = "";
                 //playerChoices = GetChoices();
                 round.Player1Choice = playerChoices.Item1;
@@ -79,10 +79,7 @@ namespace Server
                             {
                                 //Show the players that it was a draw
                                 winner = "draw";
-                                if (gamesToPlay == 1)
-                                {
-                                    gamesToPlay++;
-                                }
+                               
                                 break;
                             }
                             scores.GivePoint((int)Players.Second);
@@ -122,7 +119,7 @@ namespace Server
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     //round.RoundOver = false;
-                    round.Reset();
+                    
                     
                     
                 }

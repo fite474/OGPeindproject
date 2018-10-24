@@ -18,7 +18,7 @@ namespace Eindproject
         {
             Console.Beep();
             
-            TcpClient client = new TcpClient("10.254.187.28", 1330);
+            TcpClient client = new TcpClient("127.0.0.1", 1330);
             Console.WriteLine(@"
           =-=-=-=-=-=-=-=-=-=-=-=-=-=
      -=-=-=-=      Connected      =-=-=-=-
@@ -112,13 +112,13 @@ namespace Eindproject
 
             if (roundWinner.Equals("win"))
             {
-                WinLoseScreen endscreen = new WinLoseScreen(roundWinner, gameResults);
+                WinLoseScreen endscreen = new WinLoseScreen(roundWinner, gameResults, playerName);
                 endscreen.ShowDialog();
                 
             }
             if (roundWinner.Equals("lose"))
             {
-                WinLoseScreen endscreen = new WinLoseScreen(roundWinner, gameResults);
+                WinLoseScreen endscreen = new WinLoseScreen(roundWinner, gameResults, playerName);
                 endscreen.ShowDialog();
             }
 

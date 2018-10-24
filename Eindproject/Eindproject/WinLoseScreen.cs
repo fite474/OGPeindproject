@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -15,16 +16,20 @@ namespace Eindproject
     {
         string winner;
         Label currentMatchScore;
+        private List<string> gameHistory;
+
 
         public WinLoseScreen()
         {
             InitializeComponent();
         }
 
-        public WinLoseScreen(string winorLose, List<string> gameHistory)
+        public WinLoseScreen(string winorLose, List<string> gameHistory, string playerName)
         {
             InitializeComponent();
+            this.Text = "You  --" + playerName + "--  "+ winorLose;
             SetGameHistory(gameHistory);
+            this.gameHistory = gameHistory;
             this.winner = winorLose;
             if (winner == "win")
             {
@@ -79,26 +84,52 @@ namespace Eindproject
             GameResultPanel.Controls.Add(p1);
         }
 
+        [STAThread]
         private void SaveFileButton_Click(object sender, EventArgs e)
         {
-            Stream myStream;
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-
-            saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
-            //saveFileDialog1.FileName = FileNameTextBox.Text;
-
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                string fileName = FileNameTextBox.Text;
+                if(fileName == "")
                 {
-                    // Code to write the stream goes here.
-                    myStream.Close();
+                    MessageBox.Show("Voer een naam in aub!");
+                }
+                else
+                {
+                    fileName = string.Concat(fileName, ".txt");
+                    MessageBox.Show("Opslaan naar bestand: " + fileName + "...");
+
+                    File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory + @"\" + fileName, gameHistory);
                 }
             }
+            catch(Exception Thc)
+            {
+                Debug.Write(Thc);
+            }
+
+
+
+            //Stream myStream;
+            //SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            //saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            //saveFileDialog1.FilterIndex = 2;
+            //saveFileDialog1.RestoreDirectory = true;
+            ////saveFileDialog1.FileName = FileNameTextBox.Text;
+
+            //if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            //{
+            //    if ((myStream = saveFileDialog1.OpenFile()) != null)
+            //    {
+            //        // Code to write the stream goes here.
+            //        myStream.Close();
+            //    }
+            //}
         }
 
-
+        private void FileNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            SaveFileButton.Enabled = true;
+        }
     }
 }

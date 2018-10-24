@@ -59,7 +59,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
             this.tableLayoutPanel1.Controls.Add(this.rockbutton, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.paperbutton, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.scissorbutton, 0, 3);
@@ -98,7 +98,7 @@
             this.rockbutton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.rockbutton.Location = new System.Drawing.Point(3, 59);
             this.rockbutton.Name = "rockbutton";
-            this.rockbutton.Size = new System.Drawing.Size(104, 95);
+            this.rockbutton.Size = new System.Drawing.Size(103, 95);
             this.rockbutton.TabIndex = 0;
             this.rockbutton.Text = "Rock";
             this.rockbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -115,7 +115,7 @@
             this.paperbutton.ForeColor = System.Drawing.SystemColors.Desktop;
             this.paperbutton.Location = new System.Drawing.Point(3, 160);
             this.paperbutton.Name = "paperbutton";
-            this.paperbutton.Size = new System.Drawing.Size(104, 95);
+            this.paperbutton.Size = new System.Drawing.Size(103, 95);
             this.paperbutton.TabIndex = 1;
             this.paperbutton.Text = "Paper";
             this.paperbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -131,7 +131,7 @@
             this.scissorbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.scissorbutton.Location = new System.Drawing.Point(3, 261);
             this.scissorbutton.Name = "scissorbutton";
-            this.scissorbutton.Size = new System.Drawing.Size(104, 95);
+            this.scissorbutton.Size = new System.Drawing.Size(103, 95);
             this.scissorbutton.TabIndex = 2;
             this.scissorbutton.Text = "Scissors";
             this.scissorbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -147,7 +147,7 @@
             this.lizardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lizardButton.Location = new System.Drawing.Point(3, 362);
             this.lizardButton.Name = "lizardButton";
-            this.lizardButton.Size = new System.Drawing.Size(104, 95);
+            this.lizardButton.Size = new System.Drawing.Size(103, 95);
             this.lizardButton.TabIndex = 3;
             this.lizardButton.Text = "Lizard";
             this.lizardButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -163,7 +163,7 @@
             this.spockButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.spockButton.Location = new System.Drawing.Point(3, 463);
             this.spockButton.Name = "spockButton";
-            this.spockButton.Size = new System.Drawing.Size(104, 97);
+            this.spockButton.Size = new System.Drawing.Size(103, 97);
             this.spockButton.TabIndex = 4;
             this.spockButton.Text = "Spock";
             this.spockButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -174,7 +174,7 @@
             // 
             this.scoreLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreLabel.AutoSize = true;
-            this.scoreLabel.Location = new System.Drawing.Point(510, 21);
+            this.scoreLabel.Location = new System.Drawing.Point(509, 21);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(142, 13);
             this.scoreLabel.TabIndex = 5;
@@ -185,7 +185,7 @@
             // 
             this.scoreplayer1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreplayer1.AutoSize = true;
-            this.scoreplayer1.Location = new System.Drawing.Point(658, 21);
+            this.scoreplayer1.Location = new System.Drawing.Point(657, 21);
             this.scoreplayer1.Name = "scoreplayer1";
             this.scoreplayer1.Size = new System.Drawing.Size(133, 13);
             this.scoreplayer1.TabIndex = 6;
@@ -195,9 +195,9 @@
             // 
             this.scoreplayer2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.scoreplayer2.AutoSize = true;
-            this.scoreplayer2.Location = new System.Drawing.Point(797, 21);
+            this.scoreplayer2.Location = new System.Drawing.Point(796, 21);
             this.scoreplayer2.Name = "scoreplayer2";
-            this.scoreplayer2.Size = new System.Drawing.Size(145, 13);
+            this.scoreplayer2.Size = new System.Drawing.Size(146, 13);
             this.scoreplayer2.TabIndex = 7;
             this.scoreplayer2.Text = "label1";
             // 
@@ -207,7 +207,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.player1choice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.player1choice.Location = new System.Drawing.Point(364, 261);
+            this.player1choice.Location = new System.Drawing.Point(363, 261);
             this.player1choice.Name = "player1choice";
             this.player1choice.Size = new System.Drawing.Size(140, 95);
             this.player1choice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -221,7 +221,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.player2choice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.player2choice.Location = new System.Drawing.Point(658, 261);
+            this.player2choice.Location = new System.Drawing.Point(657, 261);
             this.player2choice.Name = "player2choice";
             this.player2choice.Size = new System.Drawing.Size(133, 95);
             this.player2choice.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,7 +235,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WinLosePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.WinLosePictureBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.WinLosePictureBox.Location = new System.Drawing.Point(510, 362);
+            this.WinLosePictureBox.Location = new System.Drawing.Point(509, 362);
             this.WinLosePictureBox.Name = "WinLosePictureBox";
             this.WinLosePictureBox.Size = new System.Drawing.Size(142, 95);
             this.WinLosePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,7 +246,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(510, 201);
+            this.label1.Location = new System.Drawing.Point(509, 201);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(142, 13);
             this.label1.TabIndex = 11;
@@ -258,7 +258,7 @@
             this.RoundsLeftLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RoundsLeftLabel.AutoSize = true;
             this.RoundsLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
-            this.RoundsLeftLabel.Location = new System.Drawing.Point(113, 15);
+            this.RoundsLeftLabel.Location = new System.Drawing.Point(112, 15);
             this.RoundsLeftLabel.Name = "RoundsLeftLabel";
             this.RoundsLeftLabel.Size = new System.Drawing.Size(245, 25);
             this.RoundsLeftLabel.TabIndex = 12;
@@ -270,7 +270,7 @@
             this.Player1IndicatorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Player1IndicatorLabel.AutoSize = true;
-            this.Player1IndicatorLabel.Location = new System.Drawing.Point(364, 359);
+            this.Player1IndicatorLabel.Location = new System.Drawing.Point(363, 359);
             this.Player1IndicatorLabel.Name = "Player1IndicatorLabel";
             this.Player1IndicatorLabel.Size = new System.Drawing.Size(140, 13);
             this.Player1IndicatorLabel.TabIndex = 14;
@@ -283,7 +283,7 @@
             this.Player2IndicatorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Player2IndicatorLabel.AutoSize = true;
-            this.Player2IndicatorLabel.Location = new System.Drawing.Point(658, 359);
+            this.Player2IndicatorLabel.Location = new System.Drawing.Point(657, 359);
             this.Player2IndicatorLabel.Name = "Player2IndicatorLabel";
             this.Player2IndicatorLabel.Size = new System.Drawing.Size(133, 13);
             this.Player2IndicatorLabel.TabIndex = 15;
@@ -296,7 +296,7 @@
             this.WinnerIndicatorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WinnerIndicatorLabel.AutoSize = true;
-            this.WinnerIndicatorLabel.Location = new System.Drawing.Point(510, 346);
+            this.WinnerIndicatorLabel.Location = new System.Drawing.Point(509, 346);
             this.WinnerIndicatorLabel.Name = "WinnerIndicatorLabel";
             this.WinnerIndicatorLabel.Size = new System.Drawing.Size(142, 13);
             this.WinnerIndicatorLabel.TabIndex = 16;
@@ -311,6 +311,7 @@
             this.ClientSize = new System.Drawing.Size(995, 587);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "GameClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Rock Paper Scissors Spock Lizard Game";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

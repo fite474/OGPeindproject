@@ -130,6 +130,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "Player1Screen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Start Challenge";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
