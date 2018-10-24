@@ -51,9 +51,8 @@ namespace Server
 
             Tuple<string, string> playerChoices = new Tuple<string, string>("niets", "niets");
 
-            while (gamesToPlay > 1 || !round.RoundOver || round.Draw) //aftellen van aantal games
+            while (gamesToPlay > 1 || !round.RoundOver || lastGameDraw) //aftellen van aantal games
             {
-                round.Reset();
                 round.RoundOver = false;
                 string winner = "";
                 //playerChoices = GetChoices();
@@ -123,7 +122,7 @@ namespace Server
                     WriteTextMessage(client1, messageToClient1);
                     WriteTextMessage(client2, messageToClient2);
                     //round.RoundOver = false;
-                    
+                    round.Reset();
                     
                     
                 }

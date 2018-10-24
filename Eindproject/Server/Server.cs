@@ -15,7 +15,7 @@ namespace Server
         {
             
             IPAddress localhost = IPAddress.Parse("127.0.0.1");
-            TcpListener listener = new System.Net.Sockets.TcpListener(localhost, 1330);
+            TcpListener listener = new System.Net.Sockets.TcpListener(IPAddress.Any, 1330);
 
             listener.Start();
 
