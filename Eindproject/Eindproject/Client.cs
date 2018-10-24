@@ -13,6 +13,7 @@ namespace Eindproject
     class Client
     {
         private static List<string> gameResults;
+        private static string playerName;
         static void Main(string[] args)
         {
             Console.Beep();
@@ -27,6 +28,7 @@ namespace Eindproject
             string playernumber = ReadTextMessage(client);
             if (playernumber == "1")
             {
+                playerName = "Player 1";
                 Player1Screen player1Screen = new Player1Screen();
                 player1Screen.ShowDialog();
                 string gameMode = player1Screen.GameMode;
@@ -38,6 +40,7 @@ namespace Eindproject
             }
             else
             {
+                playerName = "Player2";
                 WaitingForm waitingForm = new WaitingForm(client);
                 //waitingForm.ShowDialog();
                 //string starting = ReadTextMessage(client);
@@ -54,7 +57,7 @@ namespace Eindproject
             bool gameOver = false;
             int roundNumber = 0;
             
-            GameClient gameClient = new GameClient();
+            GameClient gameClient = new GameClient(playerName);
           //  Application.Run(gameClient);
 
             gameClient.SetPlayerScore(player1Score, player2Score);

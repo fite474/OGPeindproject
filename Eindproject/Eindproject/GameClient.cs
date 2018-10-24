@@ -25,6 +25,18 @@ namespace Eindproject
             this.spockButton.BackgroundImage = Eindproject.Properties.Resource1.spock;
         }
 
+        public GameClient(string playerName)
+        {
+            InitializeComponent();
+            this.Text = "Rock Paper Scissors Spock Lizard Game  --- "+playerName;
+            this.rockbutton.BackgroundImage = Eindproject.Properties.Resource1.rock;
+            
+            this.paperbutton.BackgroundImage = Eindproject.Properties.Resource1.paper;
+            this.scissorbutton.BackgroundImage = Eindproject.Properties.Resource1.scissors;
+            this.lizardButton.BackgroundImage = Eindproject.Properties.Resource1.lizard;
+            this.spockButton.BackgroundImage = Eindproject.Properties.Resource1.spock;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             awnser = "Rock";
