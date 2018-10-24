@@ -17,7 +17,7 @@ namespace Eindproject
         {
             Console.Beep();
             
-            TcpClient client = new TcpClient("10.254.187.28", 1330);
+            TcpClient client = new TcpClient("127.0.0.1", 1330);
             Console.WriteLine(@"
           =-=-=-=-=-=-=-=-=-=-=-=-=-=
      -=-=-=-=      Connected      =-=-=-=-
@@ -145,9 +145,9 @@ namespace Eindproject
         public static string ReadTextMessage(TcpClient client)
         {
 
-            StreamReader stream = new StreamReader(client.GetStream(), Encoding.ASCII);
+            
 
-            try
+            using(StreamReader stream = new StreamReader(client.GetStream(), Encoding.ASCII))
             {
 
 
@@ -156,12 +156,7 @@ namespace Eindproject
 
                 return line;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("ERROR");
-                return "ERROR";
-            }
-
+           
 
         }
     }
