@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,16 +15,21 @@ namespace Eindproject
     {
         private static List<string> gameResults;
         private static string playerName;
+        static GameClient gameClient;
+        static string roundsLeft;
+        static TcpClient client;
+        //new Thread(ShowScreen).Start();
+
         static void Main(string[] args)
         {
             Console.Beep();
-            
-            TcpClient client = new TcpClient("127.0.0.1", 1330);
+
+            client = new TcpClient("127.0.0.1", 1330);
             Console.WriteLine(@"
           =-=-=-=-=-=-=-=-=-=-=-=-=-=
      -=-=-=-=      Connected      =-=-=-=-
---=-=-=-             to a              -=-=-=--   
-     -=-=-=-=     motherfucker    =-=-=-=-
+--=-=-=-             to an             -=-=-=--   
+     -=-=-=-=     awesome server  =-=-=-=-
           =-=-=-=-=-=-=-=-=-=-=-=-=-=");
             string playernumber = ReadTextMessage(client);
             if (playernumber == "1")
@@ -48,18 +54,28 @@ namespace Eindproject
                 //start wachtscherm --> nog maken
             }
 
-            string player1Choice = "";
+
+            roundsLeft = ReadTextMessage(client);
+
+
+            gameClient = new GameClient(playerName);
+            //  Application.Run(gameClient);
+            Thread gameThread = new Thread(showGameScreen);
+            gameThread.Start();
+            new Thread(runGameLoop).Start();
+        }
+
+            private static void runGameLoop(object o)
+            {
+            string player1Choice = "niets";
             string player2Choice = "";
             string player1Score = "0";
             string player2Score = "0";
-            string roundsLeft = ReadTextMessage(client);
             string roundWinner = "";
             bool gameOver = false;
             int roundNumber = 0;
-            
-            GameClient gameClient = new GameClient(playerName);
-          //  Application.Run(gameClient);
 
+            //gameClient.ShowDialog();
             gameClient.SetPlayerScore(player1Score, player2Score);
             gameClient.SetRoundsLeft(roundsLeft);
             gameResults = new List<string>();
@@ -67,17 +83,18 @@ namespace Eindproject
             while (!gameOver)
             {
                 Console.WriteLine("playerchoice" + player1Choice + player2Choice);
-
+                gameClient.resetAwnser();
+                player1Choice = "niets";
                 Console.Beep();
                 //gameClient.setScore(int.Parse(score));
                 //string message = ReadTextMessage(client);
                 //Console.Write(message);
                 //gameClient.setQuestion(message);
-                gameClient.ShowDialog();
+                //gameClient.ShowDialog();
 
-
+                while(player1Choice == "niets")
                 player1Choice = gameClient.GetAwnser();
-
+                
                 
                 WriteTextMessage(client, player1Choice);
 
@@ -133,7 +150,13 @@ namespace Eindproject
 
         }
 
-        
+
+        public static void showGameScreen(object o)
+        {
+            gameClient.ShowDialog();
+
+        }
+
 
         public static void WriteTextMessage(TcpClient client, string message)
         {

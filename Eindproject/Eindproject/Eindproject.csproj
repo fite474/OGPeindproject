@@ -78,6 +78,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="ThreadExtention.cs" />
     <Compile Include="WaitingForm.cs">
       <SubType>Form</SubType>
     </Compile>

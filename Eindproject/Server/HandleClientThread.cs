@@ -50,11 +50,13 @@ namespace Server
             WriteTextMessage(client2, gamesToPlay.ToString());
 
             Tuple<string, string> playerChoices = new Tuple<string, string>("niets", "niets");
-
-            while (gamesToPlay > 1 || !round.RoundOver || lastGameDraw) //aftellen van aantal games
+            string winnerPlayer1;
+            string winnerPlayer2;
+            string winner = "";
+            while (gamesToPlay > 1|| !round.RoundOver || lastGameDraw) //aftellen van aantal games
             {
                 round.Reset();
-                string winner = "";
+                //string winner = "";
                 //playerChoices = GetChoices();
                 round.Player1Choice = playerChoices.Item1;
                 round.Player2Choice = playerChoices.Item2;
@@ -93,13 +95,14 @@ namespace Server
                     {
                         gamesToPlay--;
                     }
-                    string winnerPlayer1;
-                    string winnerPlayer2;
-                    if(winner == "player1")
+
+                    Console.WriteLine(winner);
+                    if (winner == "player1")
                     {
                         winnerPlayer1 = "you";
                         winnerPlayer2 = "enemy";
                         lastGameDraw = false;
+                        //scores.GivePoint((int)Players.First);
 
                     }
                     else if(winner == "player2")
@@ -127,9 +130,20 @@ namespace Server
             }
             gameOver = true;
             //Show players who won
+            
+
+            //if (winner == "player1")
+            //{
+            //    scores.GivePoint((int)Players.First);
+            //}
+            //else
+            //{
+            //    scores.GivePoint((int)Players.Second);
+            //}
+
             int finalScorePlayer1 = scores.Player1Score;
             int finalScorePlayer2 = scores.Player2Score;
-            
+
 
             if (finalScorePlayer1 < finalScorePlayer2)
             {
