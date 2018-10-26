@@ -24,7 +24,7 @@ namespace Eindproject
         {
             Console.Beep();
 
-            client = new TcpClient("127.0.0.1", 1330);
+            client = new TcpClient("145.49.26.212", 1330);
             Console.WriteLine(@"
           =-=-=-=-=-=-=-=-=-=-=-=-=-=
      -=-=-=-=      Connected      =-=-=-=-
